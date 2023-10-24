@@ -1,0 +1,3 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Les ensembles de nombres usuels}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Définition}{2}{subsection.1.1}%
