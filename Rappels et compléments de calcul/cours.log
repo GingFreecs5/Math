@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  24 OCT 2023 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  27 OCT 2023 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,41 +459,51 @@ File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
-<./Screenshots/image1.png, id=22, 452.18938pt x 240.39813pt>
+<./Screenshots/image1.png, id=198, 452.18938pt x 240.39813pt>
 File: ./Screenshots/image1.png Graphic file (type png)
 <use ./Screenshots/image1.png>
 Package pdftex.def Info: ./Screenshots/image1.png  used on input line 97.
 (pdftex.def)             Requested size: 310.50357pt x 165.07155pt.
- [2 <./Screenshots/image1.png>] (cours.aux)
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 100.
+
+[2 <./Screenshots/image1.png>] [3] [4] [5] [6] [7] (cours.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `cours.out' has not changed.
-(rerunfilecheck)             Checksum: B14A46D7D5BC5D12B76F23AE56AA61ED;320.
+(rerunfilecheck)             Checksum: B62D5406C26DD3D6A18F2B0684D7B8D9;4745.
  ) 
 Here is how much of TeX's memory you used:
- 11574 strings out of 475247
- 180027 string characters out of 5762965
- 1923785 words of memory out of 5000000
- 32930 multiletter control sequences out of 15000+600000
- 566239 words of font info for 68 fonts, out of 8000000 for 9000
+ 11700 strings out of 475247
+ 181660 string characters out of 5762965
+ 1940785 words of memory out of 5000000
+ 32982 multiletter control sequences out of 15000+600000
+ 567486 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,252b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,789b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
-miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/mik
-tex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/miktex
--portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/miktex-po
-rtable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miktex-porta
-ble/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/miktex-portable/
-texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/miktex-portable/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/miktex-portable/texmf
-s/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cours.pdf (2 pages, 159433 bytes).
+:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/mi
+ktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/mikte
+x-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/miktex-p
+ortable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/miktex-port
+able/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miktex-portabl
+e/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/miktex-portable/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/miktex-portable/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/miktex-portable/texmfs/
+install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on cours.pdf (7 pages, 231205 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
