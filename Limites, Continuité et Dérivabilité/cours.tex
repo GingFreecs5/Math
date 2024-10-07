@@ -1,0 +1,252 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Limites, Continuité et Dérivabilité}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	
+	
+	\tableofcontents
+	
+	\newpage
+	\section{Limite d’une fonction}
+	\subsection{Définition}
+		Soient $f : I \to \mathbb{R}$, $a \in \mathbb{R}$ adhérent à $I$ et $l \in \mathbb{R}$. Alors on définit le fait que $f$ tende vers $l$ en $a$ de l’une des 9 manières suivantes :
+		\begin{enumerate}
+			\item Si $a \in \mathbb{R}$ :
+			\begin{enumerate}
+				\item On dit que $f$ tend vers $l \in \mathbb{R}$ lorsque $x$ tend vers $a$, ce que l’on note $\lim\limits_{x \to a} f(x) = l$, si :
+				\[
+				\forall \epsilon > 0, \exists \eta > 0, \forall x \in I, |x - a| \leq \eta \Rightarrow |f(x) - l| \leq \epsilon;
+				\]
+				\item On dit que $f$ tend vers $+\infty$ en $a$, ce que l’on note $\lim\limits_{x \to a} f(x) = +\infty$, si :
+				\[
+				\forall A \in \mathbb{R}, \exists \eta > 0, \forall x \in I, |x - a| \leq \eta \Rightarrow f(x) \geq A;
+				\]
+				\item On dit que $f$ tend vers $-\infty$ en $a$, ce que l’on note $\lim\limits_{x \to a} f(x) = -\infty$, si :
+				\[
+				\forall A \in \mathbb{R}, \exists \eta > 0, \forall x \in I, |x - a| \leq \eta \Rightarrow f(x) \leq A;
+				\]
+			\end{enumerate}
+			
+			\item Si $a = +\infty$ :
+			\begin{enumerate}
+				\item On dit que $f$ tend vers $l \in \mathbb{R}$ lorsque $x$ tend vers $+\infty$, ce que l’on note $\lim\limits_{x \to +\infty} f(x) = l$, si :
+				\[
+				\forall \epsilon > 0, \exists B \in \mathbb{R}, \forall x \in I, x \geq B \Rightarrow |f(x) - l| \leq \epsilon;
+				\]
+				\item On dit que $f$ tend vers $+\infty$ en $+\infty$, ce que l’on note $\lim\limits_{x \to +\infty} f(x) = +\infty$, si :
+				\[
+				\forall A \in \mathbb{R}, \exists B \in \mathbb{R}, \forall x \in I, x \geq B \Rightarrow f(x) \geq A;
+				\]
+				\item On dit que $f$ tend vers $-\infty$ en $+\infty$, ce que l’on note $\lim\limits_{x \to +\infty} f(x) = -\infty$, si :
+				\[
+				\forall A \in \mathbb{R}, \exists B \in \mathbb{R}, \forall x \in I, x \geq B \Rightarrow f(x) \leq A;
+				\]
+			\end{enumerate}
+			
+			\item Si $a = -\infty$ :
+			\begin{enumerate}
+				\item On dit que $f$ tend vers $l \in \mathbb{R}$ lorsque $x$ tend vers $-\infty$, ce que l’on note $\lim\limits_{x \to -\infty} f(x) = l$, si :
+				\[
+				\forall \epsilon > 0, \exists B \in \mathbb{R}, \forall x \in I, x \leq B \Rightarrow |f(x) - l| \leq \epsilon;
+				\]
+				\item On dit que $f$ tend vers $+\infty$ en $-\infty$, ce que l’on note $\lim\limits_{x \to -\infty} f(x) = +\infty$, si :
+				\[
+				\forall A \in \mathbb{R}, \exists B \in \mathbb{R}, \forall x \in I, x \leq B \Rightarrow f(x) \geq A;
+				\]
+				\item On dit que $f$ tend vers $-\infty$ en $-\infty$, ce que l’on note $\lim\limits_{x \to -\infty} f(x) = -\infty$, si :
+				\[
+				\forall A \in \mathbb{R}, \exists B \in \mathbb{R}, \forall x \in I, x \leq B \Rightarrow f(x) \leq A;
+				\]
+			\end{enumerate}
+		\end{enumerate}
+	\subsection{Proposition I.17 (Unicité de la limite)}
+	
+	Si une fonction tend vers une limite en $a$, alors cette limite est unique.
+	
+	\subsubsection*{Démonstration}
+	
+	Montrons le par exemple dans le cas où $a \in \mathbb{R}$ avec des limites finies.
+	
+	Par l'absurde, supposons que la fonction $f$ définie sur $I$ tende simultanément en $a$ vers $l_1, l_2 \in \mathbb{R}$, avec $l_1 \neq l_2$. Posons $\varepsilon = \frac{|l_1 - l_2|}{3}$. Par définition de la limite de $f$ en $a$ :
+	
+	\begin{itemize}
+		\item Il existe $\eta_1 > 0$ tel que, pour tout $x \in I$, si $|x - a| \leq \eta_1$, alors $|f(x) - l_1| \leq \varepsilon$.
+		\item Il existe $\eta_2 > 0$ tel que, pour tout $x \in I$, si $|x - a| \leq \eta_2$, alors $|f(x) - l_2| \leq \varepsilon$.
+	\end{itemize}
+	
+	En posant $\eta = \min(\eta_1, \eta_2)$, considérons un $x \in I$ tel que $|x - a| \leq \eta$ (ce qui est possible, puisque $a$ est adhérent à $I$). On a alors, pour un tel $x$ :
+	
+	\[
+	3\varepsilon = |l_1 - l_2| = |f(x) - l_1 + l_2 - f(x)| \leq |f(x) - l_1| + |f(x) - l_2| \leq 2\varepsilon,
+	\]
+	
+	d'où la contradiction avec le fait que $\varepsilon > 0$.
+	\subsection{Définition }
+	
+	Si $a \in \mathbb{R}$, $l \in \mathbb{R}$ et $f$ définie à gauche (resp. à droite) de $a$, on dit que $f$ a pour limite à gauche (resp. à droite) $l$ en $a$, ce que l’on note :
+	
+	\[
+	\lim_{x \to a, x < a} f(x) = l \quad \text{ou} \quad \lim_{x \to a^-} f(x) = l \quad (\text{resp.} \lim_{x \to a, x > a} f(x) = l \quad \text{ou} \quad \lim_{x \to a^+} f(x) = l)
+	\]
+	
+
+	
+	\subsection{Remarque}
+	
+	On peut aussi définir les limites à gauche et à droite avec des $\varepsilon$. Par exemple, dire que $f$ a pour limite à gauche $l$ en $a$ se traduit par :
+	
+	\begin{itemize}
+		\item Si $l \in \mathbb{R}$ : 
+		\[
+		\forall \varepsilon > 0, \exists \eta > 0, \forall x \in I, a - \eta \leq x < a \Rightarrow |f(x) - l| \leq \varepsilon;
+		\]
+		\item Si $l = +\infty$ :
+		\[
+		\forall A \in \mathbb{R}, \exists \eta > 0, \forall x \in I, a - \eta \leq x < a \Rightarrow f(x) \geq A;
+		\]
+		\item Si $l = -\infty$ :
+		\[
+		\forall A \in \mathbb{R}, \exists \eta > 0, \forall x \in I, a - \eta \leq x < a \Rightarrow f(x) \leq A.
+		\]
+	\end{itemize}
+	\subsection{Proposition}
+	
+	Si $a \in \mathbb{R}$, $l \in \mathbb{R}$, et $f$ est définie sur $I$, à gauche et à droite au voisinage de $a$. Alors :
+	
+	\begin{enumerate}
+		\item Si $a \in I$ : 
+		\[
+		\lim_{x \to a} f(x) = l \quad \text{si, et seulement si,} \quad \lim_{x \to a^+} f(x) = \lim_{x \to a^-} f(x) = f(a) = l.
+		\]
+		
+		\item Si $a \notin I$ : 
+		\[
+		\lim_{x \to a} f(x) = l \quad \text{si, et seulement si,} \quad \lim_{x \to a^+} f(x) = \lim_{x \to a^-} f(x) = l.
+		\]
+	\end{enumerate}
+	
+	\subsubsection*{Remarque}
+	
+	Dans le premier cas, le fait que $f(a) = l$ exclut le cas où $l = \pm \infty$.
+	
+	\subsection{Exemples}
+	
+	\begin{enumerate}
+		\item On peut voir ainsi que la fonction inverse n’a pas de limite en 0, puisque :
+		\[
+		\lim_{x \to 0^+} \frac{1}{x} = +\infty \quad \text{et} \quad \lim_{x \to 0^-} \frac{1}{x} = -\infty.
+		\]
+		
+		\item En revanche, la fonction $x \mapsto \frac{1}{x^2}$ a bien une limite en 0 puisque :
+		\[
+		\lim_{x \to 0^+} \frac{1}{x^2} = +\infty = \lim_{x \to 0^-} \frac{1}{x^2}.
+		\]
+	\end{enumerate}
+	\subsection{Corollaire I.42}
+	Si \( f \), \( g \) sont deux fonctions définies sur \( I \), et \( a \) adhérent à \( I \). Supposons que \( f \), \( g \) ont des limites en \( a \) et que, au voisinage de \( a \), on ait : \( f(x) \leq g(x) \). Alors :
+	\[
+	\lim_{x \to a} f(x) \leq \lim_{x \to a} g(x).
+	\]
+	
+	\subsection{Théorème I.43 (Théorème d'encadrement, ou des gendarmes)}
+	Si \( f \), \( g \), \( h \) sont trois fonctions définies sur \( I \), \( a \) adhérent à \( I \), tels qu'au voisinage de \( a \) : \( f(x) \leq g(x) \leq h(x) \). Si
+	\[
+	\lim_{x \to a} f(x) = \lim_{x \to a} h(x) = l \in \mathbb{R},
+	\]
+	alors
+	\[
+	\lim_{x \to a} g(x) = l.
+	\]
+	\subsection{Proposition I.45}
+	Si \( f \), \( g \) sont définies sur \( I \), et \( a \) adhérent à \( I \) tels qu'au voisinage de \( a \) : \( f(x) \leq g(x) \). Alors :
+	\begin{enumerate}
+		\item si \( \lim_{x \to a} f(x) = +\infty \), alors \( \lim_{x \to a} g(x) = +\infty \);
+		\item si \( \lim_{x \to a} g(x) = -\infty \), alors \( \lim_{x \to a} f(x) = -\infty \).
+	\end{enumerate}
+	
+
+	\section{ Continuité en un point}
+		\subsection{Définition } Si \( f \) est définie sur \( I \subset \mathbb{R} \), et \( a \in I \), on dit que \( f \) est continue en \( a \) si elle a une limite en \( a \).
+	
+	On dit que \( f \) est continue sur \( I \) si elle est continue en \( a \) pour tout \( a \in I \).
+	
+	On note \( C(I,\mathbb{R}) \) (ou parfois \( C_0(I,\mathbb{R}) \)) l’ensemble des fonctions continues sur \( I \).
+	
+		\subsection{Proposition} La somme, le produit, la multiplication par un scalaire, le quotient (s’il est bien défini) et la composition (si elle est bien définie) de fonctions continues est continue.
+	
+
+	
+
+
+	
+	
+	
+
+	
+\end{document}
