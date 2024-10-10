@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  27 OCT 2023 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  7 OCT 2024 09:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -474,7 +474,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 100.
 
 [2 <./Screenshots/image1.png>] [3] [4] [5] [6]
-<./Screenshots/image2.png, id=270, 313.17pt x 294.09875pt>
+<./Screenshots/image2.png, id=267, 313.17pt x 294.09875pt>
 File: ./Screenshots/image2.png Graphic file (type png)
 <use ./Screenshots/image2.png>
 Package pdftex.def Info: ./Screenshots/image2.png  used on input line 319.
@@ -485,55 +485,32 @@ Package pdftex.def Info: ./Screenshots/image2.png  used on input line 319.
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
-
-
-Package rerunfilecheck Warning: File `cours.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `cours.out':
-(rerunfilecheck)             Before: B62D5406C26DD3D6A18F2B0684D7B8D9;4745
-(rerunfilecheck)             After:  B6BFE12DA53BAD4D8077E479643394F4;4705.
+Package rerunfilecheck Info: File `cours.out' has not changed.
+(rerunfilecheck)             Checksum: B6BFE12DA53BAD4D8077E479643394F4;4705.
  ) 
 Here is how much of TeX's memory you used:
- 11710 strings out of 475247
- 181902 string characters out of 5762965
+ 11706 strings out of 475247
+ 181806 string characters out of 5762965
  1940785 words of memory out of 5000000
  32988 multiletter control sequences out of 15000+600000
  567486 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,79p,789b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsubsection.5.4.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.2.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.2.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-<C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/mi
-ktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/mikt
-ex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/miktex-
-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/miktex-por
-table/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/miktex-portab
-le/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miktex-portable/
-texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/miktex-portable/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/miktex-portable/texmfs
-/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/miktex-portable/texmfs/in
-stall/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cours.pdf (7 pages, 245196 bytes).
+<C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/mi
+ktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/mikte
+x-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/miktex-p
+ortable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/miktex-port
+able/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miktex-portabl
+e/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/miktex-portable/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/miktex-portable/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/miktex-portable/texmfs/
+install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on cours.pdf (7 pages, 244584 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
  307 words of extra memory for PDF output out of 10000 (max. 10000000)
 

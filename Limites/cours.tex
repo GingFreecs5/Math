@@ -208,13 +208,16 @@
 		\lim_{x \to 0^+} \frac{1}{x^2} = +\infty = \lim_{x \to 0^-} \frac{1}{x^2}.
 		\]
 	\end{enumerate}
-	\subsection{Corollaire I.42}
-	Si \( f \), \( g \) sont deux fonctions définies sur \( I \), et \( a \) adhérent à \( I \). Supposons que \( f \), \( g \) ont des limites en \( a \) et que, au voisinage de \( a \), on ait : \( f(x) \leq g(x) \). Alors :
-	\[
-	\lim_{x \to a} f(x) \leq \lim_{x \to a} g(x).
-	\]
+	\subsection{Proposition }
+	Si \( f \), \( g \) sont deux fonctions définies sur \( I \). Si \( f(x) \leq g(x) \) alors :
 	
-	\subsection{Théorème I.43 (Théorème d'encadrement, ou des gendarmes)}
+
+	\begin{enumerate}
+		\item  	Si \( f \) et \( g \) ont des limites en \( a \)	\(\lim_{x \to a} f(x) \leq \lim_{x \to a} g(x) \);
+		\item si \( \lim_{x \to a} f(x) = +\infty \), alors \( \lim_{x \to a} g(x) = +\infty \);
+		\item si \( \lim_{x \to a} g(x) = -\infty \), alors \( \lim_{x \to a} f(x) = -\infty \).
+	\end{enumerate}
+	\subsection{Théorème  (Théorème d'encadrement, ou des gendarmes)}
 	Si \( f \), \( g \), \( h \) sont trois fonctions définies sur \( I \), \( a \) adhérent à \( I \), tels qu'au voisinage de \( a \) : \( f(x) \leq g(x) \leq h(x) \). Si
 	\[
 	\lim_{x \to a} f(x) = \lim_{x \to a} h(x) = l \in \mathbb{R},
@@ -223,29 +226,152 @@
 	\[
 	\lim_{x \to a} g(x) = l.
 	\]
-	\subsection{Proposition I.45}
-	Si \( f \), \( g \) sont définies sur \( I \), et \( a \) adhérent à \( I \) tels qu'au voisinage de \( a \) : \( f(x) \leq g(x) \). Alors :
-	\begin{enumerate}
-		\item si \( \lim_{x \to a} f(x) = +\infty \), alors \( \lim_{x \to a} g(x) = +\infty \);
-		\item si \( \lim_{x \to a} g(x) = -\infty \), alors \( \lim_{x \to a} f(x) = -\infty \).
-	\end{enumerate}
+\section{Limites usuelles}
+
+\subsection{Proposition}
+Soient \( f \) et \( g \) deux fonctions définies sur un intervalle \( I \subset \mathbb{R} \), et \( a \in I \). On a les résultats suivants pour les limites usuelles :
+
+\begin{itemize}
+	\item \textbf{Limite d'une constante :} Si \( f(x) = c \) où \( c \in \mathbb{R} \), alors :
+	\[
+	\lim_{x \to a} f(x) = c
+	\]
+	
+	\item \textbf{Limite de l'identité :} Si \( f(x) = x \), alors :
+	\[
+	\lim_{x \to a} f(x) = a
+	\]
+	
+	\item \textbf{Limite de l'inverse :} Si \( f(x) = \frac{1}{x} \) et \( a \neq 0 \), alors :
+	\[
+	\lim_{x \to a} \frac{1}{x} = \frac{1}{a}
+	\]
+	
+	\item \textbf{Limite de la fonction carrée :} Si \( f(x) = x^2 \), alors :
+	\[
+	\lim_{x \to a} x^2 = a^2
+	\]
+	
+	\item \textbf{Limite de la fonction racine carrée :} Si \( f(x) = \sqrt{x} \) et \( a \geq 0 \), alors :
+	\[
+	\lim_{x \to a} \sqrt{x} = \sqrt{a}
+	\]
+	
+	\item \textbf{Limite des fonctions exponentielles et logarithmiques :}
+	\[
+	\lim_{x \to +\infty} e^x = +\infty, \quad \lim_{x \to -\infty} e^x = 0
+	\]
+	\[
+	\lim_{x \to +\infty} \ln(x) = +\infty, \quad \lim_{x \to 0^+} \ln(x) = -\infty
+	\]
+\end{itemize}
+
+Ces résultats sont essentiels pour le calcul des limites en analyse et seront utilisés dans de nombreux cas.
+
+
+\section{Proposition. Limites usuelles des fonctions en \( +\infty \) et \( -\infty \)}
+
+\subsection{Limites des fonctions polynômes}
+Soit \( f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 \), un polynôme de degré \( n \). Alors :
+\[
+\lim_{x \to +\infty} f(x) =
+\begin{cases} 
+	+ \infty & \text{si } a_n > 0, \\
+	- \infty & \text{si } a_n < 0, 
+\end{cases}
+\quad \text{et} \quad
+\lim_{x \to -\infty} f(x) =
+\begin{cases} 
+	+ \infty & \text{si } n \text{ est pair et } a_n > 0, \\
+	- \infty & \text{si } n \text{ est pair et } a_n < 0, \\
+	+ \infty & \text{si } n \text{ est impair et } a_n < 0, \\
+	- \infty & \text{si } n \text{ est impair et } a_n > 0.
+\end{cases}
+\]
+
+\subsection{Limites des fonctions rationnelles}
+Soient \( f(x) = \frac{p(x)}{q(x)} \), où \( p(x) \) et \( q(x) \) sont des polynômes tels que \( \deg(p) = m \) et \( \deg(q) = n \). Alors :
+\[
+\lim_{x \to +\infty} \frac{f(x)}{g(x)} =
+\begin{cases} 
+	0 & \text{si } m < n, \\
+	\frac{a_m}{b_n} & \text{si } m = n, \\
+	+ \infty & \text{si } m > n \text{ et } \frac{a_m}{b_n} > 0, \\
+	- \infty & \text{si } m > n \text{ et } \frac{a_m}{b_n} < 0,
+\end{cases}
+\quad \text{et} \quad
+\lim_{x \to -\infty} \frac{f(x)}{g(x)} = \text{à calculer en fonction des signes de } a_m \text{ et } b_n.
+\]
+
+\subsection{Limites des fonctions racines carrées}
+Soit \( f(x) = \sqrt{x} \). Alors :
+\[
+\lim_{x \to +\infty} \sqrt{x} = +\infty,
+\quad \lim_{x \to 0^+} \sqrt{x} = 0,
+\quad \text{et} \quad \lim_{x \to 0^-} \sqrt{x} \text{ n'existe pas}.
+\]
+
+\subsection{Limites des fonctions exponentielles et logarithmiques}
+\[
+\lim_{x \to +\infty} e^x = +\infty,
+\quad \lim_{x \to -\infty} e^x = 0,
+\quad \lim_{x \to 0^+} \ln(x) = -\infty,
+\quad \text{et} \quad \lim_{x \to +\infty} \ln(x) = +\infty.
+\]
+
+
+\subsection{Limites des fonctions trigonométriques}
+\[
+\lim_{x \to 0} \sin(x) = 0,
+\quad \lim_{x \to +\infty} \sin(x) \text{ n'existe pas},
+\quad \lim_{x \to +\infty} \cos(x) \text{ n'existe pas}.
+\]
+Pour la fonction tangente :
+\[
+\lim_{x \to \frac{\pi}{2}^-} \tan(x) = +\infty,
+\quad \lim_{x \to \frac{\pi}{2}^+} \tan(x) = -\infty.
+\]
+\section{Démonstration de \(\lim_{x \to 0} \frac{\sin(x)}{x} = 1\)}
+
+\textbf{Démonstration.} Nous utilisons une approche géométrique en considérant le cercle unité. Pour \( x \) en radians, avec \( x > 0 \), on peut montrer les inégalités suivantes :
+
+\[
+\cos(x) \leq \frac{\sin(x)}{x} \leq 1.
+\]
+
+\textbf{Étape 1 : Construction géométrique.} Considérons un cercle de rayon \(1\) centré à l'origine dans le plan. Le secteur angulaire d'angle \( x \), mesuré en radians, a une aire égale à \( \frac{x}{2} \). En traçant le segment correspondant à \( \sin(x) \) et la tangente \( \tan(x) \), nous obtenons les inégalités suivantes :
+
+\[
+\sin(x) \leq x \leq \tan(x).
+\]
+
+\textbf{Étape 2 : Normalisation.} En divisant toutes les parties de l'inégalité par \( \sin(x) \) et \( x \), nous obtenons :
+
+\[
+1 \leq \frac{x}{\sin(x)} \leq \frac{1}{\cos(x)}.
+\]
+
+En inversant cette inégalité, on obtient :
+
+\[
+\cos(x) \leq \frac{\sin(x)}{x} \leq 1.
+\]
+
+\textbf{Étape 3 : Limite.} Prenons la limite lorsque \( x \) tend vers 0. Nous savons que \( \cos(x) \to 1 \) lorsque \( x \to 0 \), donc, par le théorème des gendarmes (ou théorème d'encadrement), on en déduit que :
+
+\[
+\lim_{x \to 0} \frac{\sin(x)}{x} = 1.
+\]
+
+\textbf{Conclusion.} Ainsi, nous avons montré que :
+
+\[
+\lim_{x \to 0} \frac{\sin(x)}{x} = 1.
+\]
+
+
 	
 
-	\section{ Continuité en un point}
-		\subsection{Définition } Si \( f \) est définie sur \( I \subset \mathbb{R} \), et \( a \in I \), on dit que \( f \) est continue en \( a \) si elle a une limite en \( a \).
-	
-	On dit que \( f \) est continue sur \( I \) si elle est continue en \( a \) pour tout \( a \in I \).
-	
-	On note \( C(I,\mathbb{R}) \) (ou parfois \( C_0(I,\mathbb{R}) \)) l’ensemble des fonctions continues sur \( I \).
-	
-		\subsection{Proposition} La somme, le produit, la multiplication par un scalaire, le quotient (s’il est bien défini) et la composition (si elle est bien définie) de fonctions continues est continue.
-	
-
-	
-
-
-	
-	
 	
 
 	
