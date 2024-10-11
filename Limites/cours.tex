@@ -42,7 +42,7 @@
 
 
 
-\title{\textbf{Limites, Continuité et Dérivabilité}}
+\title{\textbf{Limites}}
 
 \author{\textbf{Yassin Akkab}}
 
@@ -125,7 +125,7 @@
 				\]
 			\end{enumerate}
 		\end{enumerate}
-	\subsection{Proposition I.17 (Unicité de la limite)}
+	\subsection{Proposition (Unicité de la limite)}
 	
 	Si une fonction tend vers une limite en $a$, alors cette limite est unique.
 	
@@ -147,8 +147,8 @@
 	\]
 	
 	d'où la contradiction avec le fait que $\varepsilon > 0$.
-	\subsection{Définition }
-	
+	\subsection{Limite à gauche et à droite }
+	\subsubsection{Définition}
 	Si $a \in \mathbb{R}$, $l \in \mathbb{R}$ et $f$ définie à gauche (resp. à droite) de $a$, on dit que $f$ a pour limite à gauche (resp. à droite) $l$ en $a$, ce que l’on note :
 	
 	\[
@@ -157,7 +157,7 @@
 	
 
 	
-	\subsection{Remarque}
+	\subsubsection{Remarque}
 	
 	On peut aussi définir les limites à gauche et à droite avec des $\varepsilon$. Par exemple, dire que $f$ a pour limite à gauche $l$ en $a$ se traduit par :
 	
@@ -175,9 +175,9 @@
 		\forall A \in \mathbb{R}, \exists \eta > 0, \forall x \in I, a - \eta \leq x < a \Rightarrow f(x) \leq A.
 		\]
 	\end{itemize}
-	\subsection{Proposition}
+	\subsubsection{Proposition}
 	
-	Si $a \in \mathbb{R}$, $l \in \mathbb{R}$, et $f$ est définie sur $I$, à gauche et à droite au voisinage de $a$. Alors :
+	Si $a \in \mathbb{R}$, $l \in \mathbb{R}$, et $f$ est définie sur $I$, à gauche et à droite de $a$. Alors :
 	
 	\begin{enumerate}
 		\item Si $a \in I$ : 
@@ -191,11 +191,9 @@
 		\]
 	\end{enumerate}
 	
-	\subsubsection*{Remarque}
+
 	
-	Dans le premier cas, le fait que $f(a) = l$ exclut le cas où $l = \pm \infty$.
-	
-	\subsection{Exemples}
+	\subsubsection{Exemples}
 	
 	\begin{enumerate}
 		\item On peut voir ainsi que la fonction inverse n’a pas de limite en 0, puisque :
@@ -208,6 +206,19 @@
 		\lim_{x \to 0^+} \frac{1}{x^2} = +\infty = \lim_{x \to 0^-} \frac{1}{x^2}.
 		\]
 	\end{enumerate}
+	\subsection{Les quatre formes indéterminées des limites}
+	
+	Lors de l'étude des limites, il existe quatre formes indéterminées classiques :
+	
+	\begin{itemize}
+		\item $\frac{0}{0}$ : Cette forme apparaît souvent dans les limites de fractions lorsque le numérateur et le dénominateur tendent simultanément vers zéro.
+		\item $\frac{\infty}{\infty}$ : Cette forme survient lorsque le numérateur et le dénominateur d'une fraction tendent tous deux vers l'infini.
+		\item $0 \times \infty$ : Ce produit indéterminé peut se rencontrer dans des expressions où un terme tend vers zéro tandis qu'un autre tend vers l'infini.
+		\item $\infty - \infty$ : Cette différence indéterminée apparaît lorsque deux termes tendent vers l'infini, mais leur différence n'est pas immédiatement claire.
+	\end{itemize}
+	
+	Ces formes nécessitent des techniques spéciales pour être résolues, telles que la factorisation, la rationalisation, l'encadrement, ou l'utilisation des théorèmes comme celui de l'Hôpital.
+	
 	\subsection{Proposition }
 	Si \( f \), \( g \) sont deux fonctions définies sur \( I \). Si \( f(x) \leq g(x) \) alors :
 	
@@ -226,9 +237,33 @@
 	\[
 	\lim_{x \to a} g(x) = l.
 	\]
+	\subsection{Le théorème de l'Hôpital}
+	
+	Le théorème de l'Hôpital est un outil puissant pour résoudre les limites présentant des formes indéterminées, telles que $\frac{0}{0}$ et $\frac{\infty}{\infty}$. Il permet de simplifier ces formes en dérivant les numérateurs et dénominateurs sous certaines conditions.
+	\\
+	
+	\textbf{Théorème de l'Hôpital} : \textit{Soient $f$ et $g$ deux fonctions dérivables sur un intervalle ouvert $I$ contenant un point $a$ (à l'exception peut-être de $a$ lui-même). Si :
+		\begin{itemize}
+			\item $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ ou $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = \pm \infty$,
+			\item $g'(x) \neq 0$ pour tout $x$ proche de $a$,
+		\end{itemize}
+		alors :
+		\[
+		\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+		\]
+		si la limite à droite existe ou tend vers $\pm \infty$.}
+	
+	\textbf{Remarques} :
+	\begin{itemize}
+		\item Le théorème de l'Hôpital peut être appliqué plusieurs fois si nécessaire, notamment lorsque la forme indéterminée persiste après une première application.
+		\item Il ne peut être appliqué qu'en présence de formes indéterminées spécifiques comme $\frac{0}{0}$ ou $\frac{\infty}{\infty}$.
+	\end{itemize}
+	
+	Le théorème est souvent utilisé en combinaison avec d'autres techniques de calcul de limites pour obtenir un résultat plus simple et gérable.
+	
 \section{Limites usuelles}
 
-\subsection{Proposition}
+\subsection{Limites des fonctions usuelles dans un point}
 Soient \( f \) et \( g \) deux fonctions définies sur un intervalle \( I \subset \mathbb{R} \), et \( a \in I \). On a les résultats suivants pour les limites usuelles :
 
 \begin{itemize}
@@ -257,21 +292,16 @@ Soient \( f \) et \( g \) deux fonctions définies sur un intervalle \( I \subse
 	\lim_{x \to a} \sqrt{x} = \sqrt{a}
 	\]
 	
-	\item \textbf{Limite des fonctions exponentielles et logarithmiques :}
-	\[
-	\lim_{x \to +\infty} e^x = +\infty, \quad \lim_{x \to -\infty} e^x = 0
-	\]
-	\[
-	\lim_{x \to +\infty} \ln(x) = +\infty, \quad \lim_{x \to 0^+} \ln(x) = -\infty
-	\]
+	
+
 \end{itemize}
 
 Ces résultats sont essentiels pour le calcul des limites en analyse et seront utilisés dans de nombreux cas.
 
 
-\section{Proposition. Limites usuelles des fonctions en \( +\infty \) et \( -\infty \)}
+\subsection{Proposition. Limites usuelles des fonctions en \( +\infty \) et \( -\infty \)}
 
-\subsection{Limites des fonctions polynômes}
+\subsubsection{Limites des fonctions polynômes}
 Soit \( f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 \), un polynôme de degré \( n \). Alors :
 \[
 \lim_{x \to +\infty} f(x) =
@@ -289,7 +319,7 @@ Soit \( f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 \), un polynôme
 \end{cases}
 \]
 
-\subsection{Limites des fonctions rationnelles}
+\subsubsection{Limites des fonctions rationnelles}
 Soient \( f(x) = \frac{p(x)}{q(x)} \), où \( p(x) \) et \( q(x) \) sont des polynômes tels que \( \deg(p) = m \) et \( \deg(q) = n \). Alors :
 \[
 \lim_{x \to +\infty} \frac{f(x)}{g(x)} =
@@ -303,7 +333,7 @@ Soient \( f(x) = \frac{p(x)}{q(x)} \), où \( p(x) \) et \( q(x) \) sont des pol
 \lim_{x \to -\infty} \frac{f(x)}{g(x)} = \text{à calculer en fonction des signes de } a_m \text{ et } b_n.
 \]
 
-\subsection{Limites des fonctions racines carrées}
+\subsubsection{Limites des fonctions racines carrées}
 Soit \( f(x) = \sqrt{x} \). Alors :
 \[
 \lim_{x \to +\infty} \sqrt{x} = +\infty,
@@ -311,63 +341,57 @@ Soit \( f(x) = \sqrt{x} \). Alors :
 \quad \text{et} \quad \lim_{x \to 0^-} \sqrt{x} \text{ n'existe pas}.
 \]
 
-\subsection{Limites des fonctions exponentielles et logarithmiques}
-\[
-\lim_{x \to +\infty} e^x = +\infty,
-\quad \lim_{x \to -\infty} e^x = 0,
-\quad \lim_{x \to 0^+} \ln(x) = -\infty,
-\quad \text{et} \quad \lim_{x \to +\infty} \ln(x) = +\infty.
-\]
 
 
-\subsection{Limites des fonctions trigonométriques}
-\[
-\lim_{x \to 0} \sin(x) = 0,
-\quad \lim_{x \to +\infty} \sin(x) \text{ n'existe pas},
-\quad \lim_{x \to +\infty} \cos(x) \text{ n'existe pas}.
-\]
-Pour la fonction tangente :
-\[
-\lim_{x \to \frac{\pi}{2}^-} \tan(x) = +\infty,
-\quad \lim_{x \to \frac{\pi}{2}^+} \tan(x) = -\infty.
-\]
-\section{Démonstration de \(\lim_{x \to 0} \frac{\sin(x)}{x} = 1\)}
+\subsubsection{Les limites des formes trigonométriques}
 
-\textbf{Démonstration.} Nous utilisons une approche géométrique en considérant le cercle unité. Pour \( x \) en radians, avec \( x > 0 \), on peut montrer les inégalités suivantes :
+Les limites faisant intervenir des fonctions trigonométriques sont fréquemment rencontrées dans l'étude des fonctions. Voici quelques résultats importants à connaître :
 
-\[
-\cos(x) \leq \frac{\sin(x)}{x} \leq 1.
-\]
+\begin{itemize}
+	\item $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$
+	\item $\lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}$
+	\item $\lim_{x \to \infty} \sin(x)$ et $\lim_{x \to \infty} \cos(x)$ n'existent pas car ces fonctions oscillent entre -1 et 1.
+	\item $\lim_{x \to 0} \tan(x) = 0$
+	\item $\lim_{x \to 0} \frac{\tan(x)}{x} = 1$
+	\item $\lim_{x \to \frac{\pi}{2}^-} \tan(x) = +\infty$
+	\item $\lim_{x \to \frac{\pi}{2}^+} \tan(x) = -\infty$
+	\item $\lim_{x \to -\frac{\pi}{2}^-} \tan(x) = -\infty$
+	\item $\lim_{x \to -\frac{\pi}{2}^+} \tan(x) = +\infty$
+\end{itemize}
 
-\textbf{Étape 1 : Construction géométrique.} Considérons un cercle de rayon \(1\) centré à l'origine dans le plan. Le secteur angulaire d'angle \( x \), mesuré en radians, a une aire égale à \( \frac{x}{2} \). En traçant le segment correspondant à \( \sin(x) \) et la tangente \( \tan(x) \), nous obtenons les inégalités suivantes :
+Ces limites sont essentielles pour résoudre des problèmes complexes en analyse, notamment dans les développements en série et l'application du\textbf{ théorème de l'Hôpital}.
+\subsection{Somme, produit et rapport avec des constantes et des infinis}
 
-\[
-\sin(x) \leq x \leq \tan(x).
-\]
+Dans l'étude des limites, il est important de connaître les règles qui s'appliquent lorsqu'on combine des constantes, des infinis, et des fonctions dans des opérations telles que la somme, le produit ou le rapport. Voici quelques résultats clés :
 
-\textbf{Étape 2 : Normalisation.} En divisant toutes les parties de l'inégalité par \( \sin(x) \) et \( x \), nous obtenons :
+\subsubsection*{Somme avec des infinis et des constantes}
+\begin{itemize}
+	\item $\infty + \infty = \infty$
+	\item $-\infty + (-\infty) = -\infty$
+	\item $\infty + c = \infty$ \quad pour toute constante réelle \( c \)
+	\item $-\infty + c = -\infty$ \quad pour toute constante réelle \( c \)
+	\item $\infty + (-\infty)$ est une \textit{forme indéterminée}.
+\end{itemize}
 
-\[
-1 \leq \frac{x}{\sin(x)} \leq \frac{1}{\cos(x)}.
-\]
+\subsubsection*{Produit avec des infinis et des constantes}
+\begin{itemize}
+	\item $c \cdot \infty = \infty$ \quad pour \( c > 0 \)
+	\item $c \cdot \infty = -\infty$ \quad pour \( c < 0 \)
+	\item $c \cdot 0 = 0$ \quad pour toute constante \( c \)
+	\item $\infty \cdot \infty = \infty$
+	\item $\infty \cdot 0$ est une \textit{forme indéterminée}.
+\end{itemize}
 
-En inversant cette inégalité, on obtient :
+\subsubsection*{Rapport avec des infinis et des constantes}
+\begin{itemize}
+	\item $\frac{\infty}{c} = \infty$ \quad pour \( c > 0 \)
+	\item $\frac{-\infty}{c} = -\infty$ \quad pour \( c > 0 \)
+	\item $\frac{\infty}{\infty}$ est une \textit{forme indéterminée}.
+	\item $\frac{c}{\infty} = 0$ \quad pour toute constante réelle \( c \)
+	\item $\frac{c}{0}$ pour \( c \neq 0 \) tend vers \( \pm \infty \) selon le signe de \( c \).
+\end{itemize}
 
-\[
-\cos(x) \leq \frac{\sin(x)}{x} \leq 1.
-\]
-
-\textbf{Étape 3 : Limite.} Prenons la limite lorsque \( x \) tend vers 0. Nous savons que \( \cos(x) \to 1 \) lorsque \( x \to 0 \), donc, par le théorème des gendarmes (ou théorème d'encadrement), on en déduit que :
-
-\[
-\lim_{x \to 0} \frac{\sin(x)}{x} = 1.
-\]
-
-\textbf{Conclusion.} Ainsi, nous avons montré que :
-
-\[
-\lim_{x \to 0} \frac{\sin(x)}{x} = 1.
-\]
+Ces règles sont essentielles pour comprendre les comportements asymptotiques des fonctions, notamment dans les calculs de limites et dans l'étude des séries et des intégrales impropres.
 
 
 	
