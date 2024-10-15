@@ -73,6 +73,74 @@
 	\tableofcontents
 	
 	\newpage
+	\section{Étude d'une fonction}
+	
+	L'étude d'une fonction consiste à analyser ses principales propriétés : son domaine de définition, ses variations, les limites aux bornes de son domaine, ainsi que ses asymptotes éventuelles. Voici les étapes à suivre :
+	
+	\subsection{Domaine de définition}
+	
+	Il faut commencer par déterminer l'ensemble des valeurs de \( x \) pour lesquelles la fonction est définie. On résout ainsi les équations ou inéquations qui définissent les restrictions de la fonction (comme les racines carrées, les logarithmes ou les dénominateurs de fractions).
+	
+	\[
+	D_f = \{x \in \mathbb{R} \mid f(x) \text{ est définie} \}
+	\]
+	
+	\subsection{Parité de la fonction}
+	
+	On vérifie si la fonction est paire ou impaire. Cela peut simplifier les calculs ou permettre de déduire le comportement de la fonction sur une partie de son domaine :
+	
+	\begin{itemize}
+		\item \( f \) est \textbf{paire} si \( f(-x) = f(x) \) pour tout \( x \in D_f \).
+		\item \( f \) est \textbf{impaire} si \( f(-x) = -f(x) \) pour tout \( x \in D_f \).
+	\end{itemize}
+	
+	\subsection{Limites aux bornes du domaine}
+	
+	On calcule les limites de la fonction aux bornes de son domaine de définition (en \( +\infty \), \( -\infty \) ou en tout point où la fonction n'est pas définie). Ces limites permettent d'identifier des comportements asymptotiques ou des discontinuités :
+	
+	\[
+	\lim_{x \to a} f(x)
+	\]
+	où \( a \) est une borne du domaine ou un point particulier.
+	
+	\subsection{Dérivée de la fonction}
+	
+	On calcule la dérivée de la fonction \( f \) pour étudier ses variations. La dérivée nous permet de déterminer les intervalles de croissance et de décroissance, ainsi que les extremums locaux (maximums et minimums) :
+	
+	\[
+	f'(x)
+	\]
+	
+	On résout ensuite l'équation \( f'(x) = 0 \) pour trouver les points critiques.
+	
+	\subsection{Tableau de variations}
+	
+	À partir du signe de \( f'(x) \), on dresse le tableau de variations de la fonction, qui montre les intervalles où \( f \) est croissante ou décroissante, ainsi que les extremums.
+	
+	\[
+	\text{Tableau de variations}
+	\]
+	
+	\subsection{Étude de la convexité et de la concavité (facultatif)}
+	
+	On peut aussi calculer	 la dérivée seconde \( f''(x) \) pour étudier la convexité et la concavité de la fonction et déterminer les points d'inflexion.
+	
+	\subsection{Asymptotes (facultatif)}
+	
+	Si la fonction présente des limites infinies, on peut déterminer les éventuelles asymptotes horizontales, verticales ou obliques.
+	
+	\[
+	\lim_{x \to +\infty} f(x) = L \quad \text{(Asymptote horizontale)}
+	\]
+	\[
+	\lim_{x \to a^-} f(x) = \pm \infty \quad \text{(Asymptote verticale)}
+	\]
+	
+	\subsection{Courbe représentative}
+	
+	Après avoir effectué toutes les étapes précédentes, on peut tracer la courbe représentative de la fonction en respectant les informations sur les variations, les extremums, et les asymptotes.
+	
+	
 	\section{Limite d’une fonction}
 	\subsection{Définition}
 		Soient $f : I \to \mathbb{R}$, $a \in \mathbb{R}$ adhérent à $I$ et $l \in \mathbb{R}$. Alors on définit le fait que $f$ tende vers $l$ en $a$ de l’une des 9 manières suivantes :
@@ -147,13 +215,67 @@
 	\]
 	
 	d'où la contradiction avec le fait que $\varepsilon > 0$.
-	\subsection{Limite à gauche et à droite }
-	\subsubsection{Définition}
-	Si $a \in \mathbb{R}$, $l \in \mathbb{R}$ et $f$ définie à gauche (resp. à droite) de $a$, on dit que $f$ a pour limite à gauche (resp. à droite) $l$ en $a$, ce que l’on note :
-	
+\section{Limites latérales}
+
+Les limites latérales permettent d'étudier le comportement d'une fonction lorsque la variable approche une certaine valeur \( a \), soit par la gauche, soit par la droite. Elles sont particulièrement utiles pour étudier les discontinuités d'une fonction.
+
+\subsection{Définitions}
+
+\begin{itemize}
+	\item La \textbf{limite à gauche} de \( f(x) \) lorsque \( x \) tend vers \( a \) est notée :
 	\[
-	\lim_{x \to a, x < a} f(x) = l \quad \text{ou} \quad \lim_{x \to a^-} f(x) = l \quad (\text{resp.} \lim_{x \to a, x > a} f(x) = l \quad \text{ou} \quad \lim_{x \to a^+} f(x) = l)
+	\lim_{x \to a^-} f(x)
 	\]
+	Cela signifie que \( x \) approche \( a \) par des valeurs inférieures à \( a \) (par la gauche).
+	
+	\item La \textbf{limite à droite} de \( f(x) \) lorsque \( x \) tend vers \( a \) est notée :
+	\[
+	\lim_{x \to a^+} f(x)
+	\]
+	Cela signifie que \( x \) approche \( a \) par des valeurs supérieures à \( a \) (par la droite).
+	
+	\item Si les deux limites latérales sont égales, alors la limite en \( a \) existe et est égale à cette valeur :
+	\[
+	\lim_{x \to a} f(x) = L \quad \text{si et seulement si} \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L
+	\]
+	Sinon, il y a une discontinuité en \( a \).
+\end{itemize}
+
+\subsection{Exemple de limites latérales}
+
+Considérons la fonction définie par morceaux suivante :
+\[
+f(x) =
+\begin{cases}
+	x + 2 & \text{si } x < 1 \\
+	3x - 1 & \text{si } x \geq 1
+\end{cases}
+\]
+
+Calculons les limites latérales en \( x = 1 \) :
+\begin{itemize}
+	\item Limite à gauche :
+	\[
+	\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x + 2) = 1 + 2 = 3
+	\]
+	\item Limite à droite :
+	\[
+	\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (3x - 1) = 3(1) - 1 = 2
+	\]
+\end{itemize}
+
+Dans cet exemple, comme \( \lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x) \), la limite en \( x = 1 \) n'existe pas et il y a une discontinuité en \( x = 1 \).
+
+\subsection{Utilisation des limites latérales}
+
+Les limites latérales sont souvent utilisées pour :
+\begin{itemize}
+	\item Étudier le comportement des fonctions définies par morceaux.
+	\item Déterminer la continuité d'une fonction en un point donné.
+	\item Identifier les discontinuités de saut ou les discontinuités infinies.
+\end{itemize}
+
+
 	
 
 	
@@ -206,6 +328,42 @@
 		\lim_{x \to 0^+} \frac{1}{x^2} = +\infty = \lim_{x \to 0^-} \frac{1}{x^2}.
 		\]
 	\end{enumerate}
+	
+	\section{Somme, produit et rapport avec des constantes et des infinis}
+	
+	Dans l'étude des limites, il est important de connaître les règles qui s'appliquent lorsqu'on combine des constantes, des infinis, et des fonctions dans des opérations telles que la somme, le produit ou le rapport. Voici quelques résultats clés :
+	
+	\subsection{Somme avec des infinis et des constantes}
+	\begin{itemize}
+		\item $\infty + \infty = \infty$
+		\item $-\infty + (-\infty) = -\infty$
+		\item $\infty + c = \infty$ \quad pour toute constante réelle \( c \)
+		\item $-\infty + c = -\infty$ \quad pour toute constante réelle \( c \)
+		\item $\infty + (-\infty)$ est une \textit{forme indéterminée}.
+	\end{itemize}
+	
+	\subsection{Produit avec des infinis et des constantes}
+	\begin{itemize}
+		\item $c \cdot \infty = \infty$ \quad pour \( c > 0 \)
+		\item $c \cdot \infty = -\infty$ \quad pour \( c < 0 \)
+		\item $c \cdot 0 = 0$ \quad pour toute constante \( c \)
+		\item $\infty \cdot \infty = \infty$
+		\item $\infty \cdot 0$ est une \textit{forme indéterminée}.
+	\end{itemize}
+	
+	\subsection{Rapport avec des infinis et des constantes}
+	\begin{itemize}
+		\item $\frac{\infty}{c} = \infty$ \quad pour \( c > 0 \)
+		\item $\frac{-\infty}{c} = -\infty$ \quad pour \( c > 0 \)
+		\item $\frac{\infty}{\infty}$ est une \textit{forme indéterminée}.
+		\item $\frac{c}{\infty} = 0$ \quad pour toute constante réelle \( c \)
+		\item $\frac{c}{0}$ pour \( c \neq 0 \) tend vers \( \pm \infty \) selon le signe de \( c \).
+	\end{itemize}
+	
+	Ces règles sont essentielles pour comprendre les comportements asymptotiques des fonctions, notamment dans les calculs de limites et dans l'étude des séries et des intégrales impropres.
+	
+	\section{Techniques de calcul des limites indéterminées}
+	
 	\subsection{Les quatre formes indéterminées des limites}
 	
 	Lors de l'étude des limites, il existe quatre formes indéterminées classiques :
@@ -360,38 +518,6 @@ Les limites faisant intervenir des fonctions trigonométriques sont fréquemment
 \end{itemize}
 
 Ces limites sont essentielles pour résoudre des problèmes complexes en analyse, notamment dans les développements en série et l'application du\textbf{ théorème de l'Hôpital}.
-\subsection{Somme, produit et rapport avec des constantes et des infinis}
-
-Dans l'étude des limites, il est important de connaître les règles qui s'appliquent lorsqu'on combine des constantes, des infinis, et des fonctions dans des opérations telles que la somme, le produit ou le rapport. Voici quelques résultats clés :
-
-\subsubsection*{Somme avec des infinis et des constantes}
-\begin{itemize}
-	\item $\infty + \infty = \infty$
-	\item $-\infty + (-\infty) = -\infty$
-	\item $\infty + c = \infty$ \quad pour toute constante réelle \( c \)
-	\item $-\infty + c = -\infty$ \quad pour toute constante réelle \( c \)
-	\item $\infty + (-\infty)$ est une \textit{forme indéterminée}.
-\end{itemize}
-
-\subsubsection*{Produit avec des infinis et des constantes}
-\begin{itemize}
-	\item $c \cdot \infty = \infty$ \quad pour \( c > 0 \)
-	\item $c \cdot \infty = -\infty$ \quad pour \( c < 0 \)
-	\item $c \cdot 0 = 0$ \quad pour toute constante \( c \)
-	\item $\infty \cdot \infty = \infty$
-	\item $\infty \cdot 0$ est une \textit{forme indéterminée}.
-\end{itemize}
-
-\subsubsection*{Rapport avec des infinis et des constantes}
-\begin{itemize}
-	\item $\frac{\infty}{c} = \infty$ \quad pour \( c > 0 \)
-	\item $\frac{-\infty}{c} = -\infty$ \quad pour \( c > 0 \)
-	\item $\frac{\infty}{\infty}$ est une \textit{forme indéterminée}.
-	\item $\frac{c}{\infty} = 0$ \quad pour toute constante réelle \( c \)
-	\item $\frac{c}{0}$ pour \( c \neq 0 \) tend vers \( \pm \infty \) selon le signe de \( c \).
-\end{itemize}
-
-Ces règles sont essentielles pour comprendre les comportements asymptotiques des fonctions, notamment dans les calculs de limites et dans l'étude des séries et des intégrales impropres.
 
 
 	
