@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  17 OCT 2024 15:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  17 OCT 2024 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,7 +461,7 @@ Package rerunfilecheck Info: File `cours.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  11573 strings out of 475247
- 179841 string characters out of 5762965
+ 179713 string characters out of 5762965
  1930785 words of memory out of 5000000
  32923 multiletter control sequences out of 15000+600000
  566574 words of font info for 69 fonts, out of 8000000 for 9000
