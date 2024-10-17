@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  15 OCT 2024 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10 Portable) (preloaded format=pdflatex 2023.10.11)  17 OCT 2024 15:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,74 +451,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/miktex-portable/texmfs/data/fonts/map/pdftex/pdftex.map}] [2] [3]
-[4]
-Overfull \hbox (16.2pt too wide) in paragraph at lines 334--336
-\OT1/cmr/m/n/10 Le th^^Seor^^Reme de l'H^opital est un outil puis-sant pour r^^
-Sesoudre les lim-ites pr^^Sesentant des formes ind^^Setermin^^Sees,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 334--336
-
- []
-
-[5] [6]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 394.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 394.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 394.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 394.
-
-
-Overfull \hbox (37.67097pt too wide) detected at line 426
-[] [] \OT1/cmr/m/n/10 = []  []  [] [] = []\OML/cmm/m/it/10 a[][]b[]:
- []
-
-[7] (cours.aux)
+[4] [5] (cours.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `cours.out' has not changed.
-(rerunfilecheck)             Checksum: 0C1B7A4D0F505DD52708FDD0C1F86BB5;5829.
+(rerunfilecheck)             Checksum: 044101801E0D7A804AC8D75E07F9FE2A;3644.
  ) 
 Here is how much of TeX's memory you used:
- 11629 strings out of 475247
- 180403 string characters out of 5762965
- 1936785 words of memory out of 5000000
- 32943 multiletter control sequences out of 15000+600000
- 566920 words of font info for 70 fonts, out of 8000000 for 9000
+ 11597 strings out of 475247
+ 179999 string characters out of 5762965
+ 1932785 words of memory out of 5000000
+ 32931 multiletter control sequences out of 15000+600000
+ 566574 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,413b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,345b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\miktex-portable\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.
 pk><C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 C:/miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
 /miktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/m
-iktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/mikt
-ex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/miktex-
-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/miktex-por
-table/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miktex-portab
-le/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/miktex-portable/t
-exmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/miktex-portable/texmf
-s/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/miktex-portable/texmfs/
-install/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/miktex-portable/texmfs/ins
-tall/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/miktex-portable/texmfs/instal
-l/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/miktex-portable/texmfs/install/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cours.pdf (7 pages, 223014 bytes).
+iktex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/mikt
+ex-portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/miktex-
+portable/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/miktex-por
+table/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/miktex-portabl
+e/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/miktex-portable/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/miktex-portable/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/miktex-portable/texmfs/
+install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on cours.pdf (5 pages, 166653 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

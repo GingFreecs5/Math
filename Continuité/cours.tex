@@ -1,0 +1,215 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Continuité}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	
+	
+	\tableofcontents
+	
+	\newpage
+	
+	\section{Introduction à la continuité}
+	
+	\subsection{Définition intuitive de la continuité}
+	
+	Une fonction est dite continue si, intuitivement, il est possible de tracer sa courbe sans lever le crayon. Autrement dit, la fonction ne présente pas de "trous", de "sauts", ou de "discontinuités".
+	
+	\paragraph{Exemples de fonctions continues :}
+	\begin{itemize}
+		\item Les fonctions polynomiales, telles que \( f(x) = x^2 \) ou \( f(x) = 3x + 1 \), sont continues sur \( \mathbb{R} \).
+		\item Les fonctions racines carrées, telles que \( f(x) = \sqrt{x} \), sont continues sur leur domaine de définition \( [0, +\infty[ \).
+	\end{itemize}
+	
+	\subsection{Définition formelle de la continuité en un point}
+	
+	Soit \( f \) une fonction définie sur un intervalle \( I \subseteq \mathbb{R} \) et \( a \in I \). On dit que la fonction \( f \) est \textbf{continue en un point} \( a \) si :
+	\[
+	\lim_{x \to a} f(x) = f(a)
+	\]
+	Autrement dit, la limite de \( f(x) \) lorsque \( x \) tend vers \( a \) doit être égale à la valeur de la fonction en \( a \).
+	
+	\paragraph{Remarque :} Si une fonction n'est pas continue en un point \( a \), on dit qu'elle présente une \textbf{discontinuité} en ce point.
+	
+	\subsection{Exemples pratiques}
+	
+	\paragraph{Exemple 1 :}
+	La fonction \( f(x) = \frac{1}{x} \) n'est pas définie en \( x = 0 \) et présente une discontinuité en ce point.
+	
+	\paragraph{Exemple 2 :}
+	La fonction \( f(x) = |x| \) est continue en tout point de \( \mathbb{R} \), bien que la dérivée de \( f \) ne soit pas définie en \( x = 0 \).
+	\section{Continuité sur un intervalle}
+	
+	Après avoir défini la continuité en un point, nous allons étendre cette notion à un intervalle.
+	
+	\subsection{Définition de la continuité sur un intervalle}
+	
+	Une fonction \( f \) est dite \textbf{continue sur un intervalle} \( I \) si elle est continue en tout point de \( I \). Autrement dit, pour tout \( a \in I \), on a :
+	\[
+	\lim_{x \to a} f(x) = f(a)
+	\]
+	
+	Si \( f \) est continue sur \( I \), alors il n'existe aucun point de discontinuité sur cet intervalle.
+	
+	\subsection{Exemples de fonctions continues sur un intervalle}
+	
+	\begin{itemize}
+		\item Les fonctions polynomiales sont continues sur \( \mathbb{R} \).
+		\item Les fonctions rationnelles, comme \( f(x) = \frac{1}{x} \), sont continues sur leur domaine de définition (par exemple, \( f(x) = \frac{1}{x} \) est continue sur \( \mathbb{R} \setminus \{0\} \)).
+		\item La fonction racine carrée \( f(x) = \sqrt{x} \) est continue sur \( [0, +\infty[ \).
+	\end{itemize}
+	
+	\subsection{Propriétés de la continuité sur un intervalle}
+	
+	Voici quelques propriétés importantes des fonctions continues sur un intervalle :
+	\begin{itemize}
+		\item \textbf{Somme de fonctions continues} : Si \( f \) et \( g \) sont continues sur un intervalle \( I \), alors \( f + g \) est continue sur \( I \).
+		\item \textbf{Produit de fonctions continues} : Si \( f \) et \( g \) sont continues sur un intervalle \( I \), alors \( f \cdot g \) est continue sur \( I \).
+		\item \textbf{Quotient de fonctions continues} : Si \( f \) et \( g \) sont continues sur un intervalle \( I \) et \( g(x) \neq 0 \) pour tout \( x \in I \), alors \( \frac{f(x)}{g(x)} \) est continue sur \( I \).
+		\item \textbf{Composition de fonctions continues} : Si \( f \) est continue en \( g(a) \) et \( g \) est continue en \( a \), alors la composition \( f \circ g \) est continue en \( a \).
+	\end{itemize}
+	
+	\subsection{Théorème des valeurs intermédiaires}
+	
+	Si une fonction \( f \) est continue sur un intervalle \( [a, b] \) et prend deux valeurs \( f(a) \) et \( f(b) \) de signes opposés, alors il existe un point \( c \in ]a, b[ \) tel que \( f(c) = 0 \).
+	
+	\paragraph{Exemple :} Soit \( f(x) = x^3 - x \). Cette fonction est continue sur \( \mathbb{R} \), et \( f(0) = 0 \), \( f(2) = 6 \), et \( f(-1) = -2 \). Par le théorème des valeurs intermédiaires, il existe au moins un point \( c \in [-1, 2] \) tel que \( f(c) = 0 \).
+	
+	\section{Discontinuité}
+	
+	\subsection{Types de discontinuités}
+	
+	Une fonction qui n'est pas continue en un point présente une discontinuité. Il existe plusieurs types de discontinuités que nous allons décrire ici.
+	
+	\paragraph{Discontinuité de première espèce} : 
+	
+	Une discontinuité de première espèce se produit lorsque la limite à gauche et la limite à droite existent mais sont différentes. Autrement dit, on a :
+	\[
+	\lim_{x \to a^-} f(x) \neq \lim_{x \to a^+} f(x)
+	\]
+	mais les deux limites existent.
+	
+	\paragraph{Discontinuité de seconde espèce} : 
+	
+	Une discontinuité de seconde espèce survient lorsque l'une des limites (ou les deux) à gauche ou à droite n'existent pas, ou sont infinies :
+	\[
+	\lim_{x \to a^-} f(x) \quad \text{ou} \quad \lim_{x \to a^+} f(x) \quad \text{n'existent pas ou valent } \pm \infty
+	\]
+	
+	\paragraph{Discontinuité amovible} : 
+	
+	Une discontinuité est dite \textbf{amovible} si la limite à gauche et à droite existent et sont égales, mais la fonction n'est pas définie en ce point, ou sa valeur ne coïncide pas avec la limite :
+	\[
+	\lim_{x \to a} f(x) = L \quad \text{mais} \quad f(a) \neq L \quad \text{ou} \quad f(a) \text{ n'existe pas.}
+	\]
+	
+	\subsection{Étude des discontinuités}
+	
+	Pour déterminer le type de discontinuité d'une fonction en un point \( a \), il est nécessaire de calculer :
+	\begin{itemize}
+		\item La limite à gauche \( \lim_{x \to a^-} f(x) \),
+		\item La limite à droite \( \lim_{x \to a^+} f(x) \),
+		\item La valeur de la fonction en \( a \), si elle est définie, \( f(a) \).
+	\end{itemize}
+	
+	Si \( \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) \) mais que \( f(a) \neq \lim_{x \to a} f(x) \), il s'agit d'une discontinuité amovible.
+	
+	\subsection{Exemples de discontinuités}
+	
+	\paragraph
+	{Exemple 1 :} La fonction définie par :
+	\[
+	f(x) =
+	\begin{cases}
+		2x + 1 & \text{si } x < 1 \\
+		3x - 1 & \text{si } x \geq 1
+	\end{cases}
+	\]
+	présente une discontinuité de première espèce en \( x = 1 \) car \( \lim_{x \to 1^-} f(x) = 3 \) et \( \lim_{x \to 1^+} f(x) = 2 \).
+	
+	\paragraph {Exemple 2 :} La fonction \( f(x) = \frac{1}{x} \) présente une discontinuité de seconde espèce en \( x = 0 \) car la limite n'existe pas en \( 0 \) (elle tend vers \( \pm \infty \)).
+
+	
+	\paragraph	{Exemple 3 :} La fonction définie par :
+	\[
+	f(x) =
+	\begin{cases}
+		x^2 & \text{si } x \neq 1 \\
+		0 & \text{si } x = 1
+	\end{cases}
+	\]
+	présente une discontinuité amovible en \( x = 1 \) car \( \lim_{x \to 1} f(x) = 1 \), mais \( f(1) = 0 \).
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}

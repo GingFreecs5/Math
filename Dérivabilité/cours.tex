@@ -1,0 +1,277 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Dérivabilité}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	
+	
+	\tableofcontents
+	
+	\newpage
+	
+	
+	\section{Dérivabilité}
+	
+	Après avoir étudié la continuité d'une fonction, nous allons maintenant aborder la dérivabilité. Une fonction dérivable est une fonction dont la pente de la tangente au graphe peut être calculée en tout point où elle est dérivable.
+	
+	\subsection{Définition de la dérivabilité en un point}
+	
+	Soit \( f \) une fonction définie sur un intervalle \( I \subseteq \mathbb{R} \) et \( a \in I \). On dit que \( f \) est \textbf{dérivable en un point} \( a \) si la limite suivante existe :
+	\[
+	f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+	\]
+	Le nombre \( f'(a) \) est appelé \textbf{dérivée} de \( f \) en \( a \), et il représente la pente de la tangente à la courbe de la fonction au point \( (a, f(a)) \).
+	
+	\subsection{Lien entre continuité et dérivabilité}
+	
+	Il est important de noter que si une fonction est dérivable en un point \( a \), alors elle est forcément continue en ce point. Cependant, l'inverse n'est pas vrai : une fonction peut être continue en un point sans être dérivable en ce point.
+	
+	\paragraph{Exemple :} La fonction valeur absolue \( f(x) = |x| \) est continue en \( x = 0 \), mais elle n'est pas dérivable en \( x = 0 \), car la pente à gauche et à droite de zéro ne coïncide pas.
+	
+	\subsection{Dérivabilité sur un intervalle}
+	
+	On dit qu'une fonction est \textbf{dérivable sur un intervalle} \( I \) si elle est dérivable en tout point de cet intervalle. Si une fonction est dérivable sur \( I \), alors elle est continue sur \( I \).
+	
+	
+	
+	\subsection{Exemples de calculs de dérivées}
+	
+	\paragraph{Exemple 1 :} Soit \( f(x) = x^2 \). Calculons sa dérivée en \( x = a \) :
+	\[
+	f'(a) = \lim_{h \to 0} \frac{(a+h)^2 - a^2}{h} = \lim_{h \to 0} \frac{2ah + h^2}{h} = 2a
+	\]
+	Donc, la dérivée de \( f(x) = x^2 \) est \( f'(x) = 2x \).
+	
+	\paragraph{Exemple 2 :} Soit \( f(x) = \sin(x) \). Calculons sa dérivée en \( x = a \) :
+	\[
+	f'(a) = \lim_{h \to 0} \frac{\sin(a+h) - \sin(a)}{h} = \lim_{h \to 0} \frac{2 \cos\left( a + \frac{h}{2} \right) \sin\left( \frac{h}{2} \right)}{h} = \cos(a)
+	\]
+	Donc, la dérivée de \( f(x) = \sin(x) \) est \( f'(x) = \cos(x) \).
+	
+	
+	\section{Règles de dérivation}
+	
+	Dans cette section, nous allons introduire les principales règles de dérivation, qui permettent de calculer les dérivées de différentes fonctions.
+	
+	\subsection{Dérivées des fonctions usuelles}
+	
+	Voici les dérivées des fonctions les plus courantes :
+	\begin{itemize}
+		\item \( (c)' = 0 \), où \( c \) est une constante.
+		\item \( (x^n)' = nx^{n-1} \) pour \( n \in \mathbb{R} \).
+		\item \( (\sin x)' = \cos x \).
+		\item \( (\cos x)' = -\sin x \).
+		\item \( (\tan x)' = \frac{1}{\cos^2 x} \) ou \( (\tan x)' = 1 + \tan^2 x \).
+		\item \( (\ln x)' = \frac{1}{x} \) pour \( x > 0 \).
+		\item \( (e^x)' = e^x \).
+	\end{itemize}
+	
+	\subsection{Règle de la somme}
+	
+	La dérivée de la somme de deux fonctions est égale à la somme des dérivées de ces fonctions. Si \( f \) et \( g \) sont dérivables, alors :
+	\[
+	(f + g)'(x) = f'(x) + g'(x)
+	\]
+	
+	\subsection{Règle du produit}
+	
+	La dérivée du produit de deux fonctions est donnée par la règle du produit. Si \( f \) et \( g \) sont dérivables, alors :
+	\[
+	(f \cdot g)'(x) = f'(x)g(x) + f(x)g'(x)
+	\]
+	
+	\subsection{Règle du quotient}
+	
+	La dérivée du quotient de deux fonctions est donnée par la règle du quotient. Si \( f \) et \( g \) sont dérivables et \( g(x) \neq 0 \), alors :
+	\[
+	\left( \frac{f}{g} \right)'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}
+	\]
+	
+	\subsection{Règle de la chaîne}
+	
+	La règle de la chaîne, ou règle de composition, permet de dériver une fonction composée. Si \( f \) et \( g \) sont dérivables, alors :
+	\[
+	(f \circ g)'(x) = f'(g(x)) \cdot g'(x)
+	\]
+	
+	\paragraph{Exemple :} Soit \( f(x) = e^{x^2} \). Pour dériver cette fonction, on applique la règle de la chaîne :
+	\[
+	f'(x) = \frac{d}{dx} \left( e^{x^2} \right) = e^{x^2} \cdot 2x
+	\]
+	
+	\subsection{Dérivée de fonctions composées}
+	
+	Voici quelques exemples pratiques d'application de la règle de la chaîne :
+	
+	\begin{itemize}
+		\item \( \frac{d}{dx} \sin(3x) = 3 \cos(3x) \)
+		\item \( \frac{d}{dx} \ln(2x) = \frac{2}{2x} = \frac{1}{x} \)
+		\item \( \frac{d}{dx} e^{x^3} = 3x^2 e^{x^3} \)
+	\end{itemize}
+	
+	\subsection{Exemples pratiques}
+	
+	\paragraph{Exemple 1 :} Calculons la dérivée de \( f(x) = x^3 + 5x^2 - 7x + 3 \) :
+	\[
+	f'(x) = 3x^2 + 10x - 7
+	\]
+	
+	\paragraph{Exemple 2 :} Calculons la dérivée de \( f(x) = \frac{\sin x}{x^2} \) :
+	\[
+	f'(x) = \frac{x^2 \cos x - 2x \sin x}{x^4}
+	\]
+	\section{Applications de la dérivée}
+	
+	La dérivée d'une fonction permet d'étudier de nombreux aspects de cette fonction. Dans cette section, nous allons aborder certaines des applications les plus importantes de la dérivée, notamment la recherche des extrema locaux, l'étude des variations d'une fonction, et la détermination de la convexité.
+	
+	\subsection{Recherche des extrema locaux}
+	
+	Les extrema locaux d'une fonction correspondent aux points où la fonction atteint un maximum ou un minimum local. Ils peuvent être trouvés en étudiant les points critiques de la fonction, c'est-à-dire les points où la dérivée est nulle ou n'existe pas.
+	
+	\paragraph{Étapes pour trouver les extrema locaux :}
+	\begin{enumerate}
+		\item Trouver la dérivée \( f'(x) \) de la fonction.
+		\item Résoudre \( f'(x) = 0 \) pour trouver les points critiques.
+		\item Étudier le signe de \( f'(x) \) pour déterminer si chaque point critique est un maximum, un minimum ou un point d'inflexion.
+	\end{enumerate}
+	
+	\paragraph{Exemple :} Soit \( f(x) = x^3 - 3x^2 + 4 \). Calculons les extrema locaux :
+	\[
+	f'(x) = 3x^2 - 6x = 3x(x-2)
+	\]
+	Les points critiques sont \( x = 0 \) et \( x = 2 \). En étudiant le signe de \( f'(x) \), on constate que :
+	\begin{itemize}
+		\item \( x = 0 \) est un minimum local.
+		\item \( x = 2 \) est un maximum local.
+	\end{itemize}
+	
+	\subsection{Étude des variations}
+	
+	L'étude des variations d'une fonction permet de déterminer les intervalles sur lesquels la fonction est croissante ou décroissante. Cela peut être fait en analysant le signe de la dérivée.
+	
+	\paragraph{Étapes pour étudier les variations d'une fonction :}
+	\begin{enumerate}
+		\item Trouver la dérivée \( f'(x) \).
+		\item Étudier le signe de \( f'(x) \) sur les différents intervalles délimités par les points critiques.
+		\item Si \( f'(x) > 0 \), la fonction est croissante, et si \( f'(x) < 0 \), la fonction est décroissante.
+	\end{enumerate}
+	
+	\paragraph{Exemple :} Pour la fonction \( f(x) = x^3 - 3x^2 + 4 \), nous avons trouvé que \( f'(x) = 3x(x-2) \). Le signe de \( f'(x) \) nous donne :
+	\begin{itemize}
+		\item \( f(x) \) est croissante sur \( ]2, +\infty[ \).
+		\item \( f(x) \) est décroissante sur \( ]-\infty, 0[ \) et \( ]0, 2[ \).
+	\end{itemize}
+	
+	\subsection{Concavité et points d'inflexion}
+	
+	La dérivée seconde \( f''(x) \) permet d'analyser la concavité d'une fonction. Une fonction est concave vers le haut (convexe) si \( f''(x) > 0 \) et concave vers le bas si \( f''(x) < 0 \).
+	
+	Les points où la concavité change sont appelés points d'inflexion. Ils correspondent aux points où \( f''(x) = 0 \).
+	
+	\paragraph{Étapes pour déterminer la concavité :}
+	\begin{enumerate}
+		\item Trouver la dérivée seconde \( f''(x) \).
+		\item Étudier le signe de \( f''(x) \) pour déterminer la concavité.
+		\item Les points où \( f''(x) = 0 \) sont des points potentiels d'inflexion.
+	\end{enumerate}
+	
+	\paragraph{Exemple :} Pour la fonction \( f(x) = x^3 - 3x^2 + 4 \), calculons la dérivée seconde :
+	\[
+	f''(x) = 6x - 6
+	\]
+	En résolvant \( f''(x) = 0 \), on trouve \( x = 1 \), qui est un point d'inflexion. La fonction est concave vers le haut pour \( x > 1 \) et concave vers le bas pour \( x < 1 \).
+	
+	\subsection{Tangente à la courbe d'une fonction}
+	
+	La tangente à la courbe d'une fonction en un point \( a \) est la droite qui "touche" la courbe en ce point et a la même pente que la fonction en \( a \). L'équation de la tangente à la courbe de \( f \) en \( a \) est donnée par :
+	\[
+	y = f'(a)(x - a) + f(a)
+	\]
+	
+	\paragraph{Exemple :} Soit \( f(x) = x^2 \). La tangente à la courbe de \( f \) en \( x = 1 \) est donnée par :
+	\[
+	f'(1) = 2 \quad \text{et} \quad f(1) = 1
+	\]
+	Donc l'équation de la tangente est :
+	\[
+	y = 2(x - 1) + 1 = 2x - 1
+	\]
+	
+	\subsection{Optimisation}
+	
+	L'optimisation consiste à trouver les valeurs maximales ou minimales d'une fonction, souvent dans un contexte économique, physique ou géométrique. On utilise la dérivée pour trouver les points critiques, puis on détermine les extrema globaux ou locaux.
+	
+	\paragraph{Exemple :} Supposons qu'une entreprise veuille maximiser son profit en fonction de la quantité produite. Si \( P(x) \) est la fonction de profit en fonction de la quantité \( x \), alors il faut résoudre \( P'(x) = 0 \) pour trouver les quantités optimales à produire.
+	
+	
+	
+	
+	
+	
+	
+\end{document}
