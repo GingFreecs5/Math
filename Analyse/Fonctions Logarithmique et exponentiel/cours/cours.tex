@@ -1,0 +1,411 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Fonctions exponentiels et  logarithmiques}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	
+	
+	\tableofcontents
+	
+	\newpage
+	
+	\section{Introduction aux fonctions exponentielles}
+	
+	\subsection{Définition intuitive}
+	
+	La fonction exponentielle modélise de nombreux phénomènes de croissance ou de décroissance. Notée \( e^x \), cette fonction est définie pour tout réel \( x \), où \( e \) est un nombre particulier, appelé base des logarithmes naturels, et vaut environ \( 2.718 \).
+	
+	\subsection{Définition formelle}
+	
+	Formellement, la fonction exponentielle est la fonction qui satisfait l'équation différentielle suivante :
+	\[
+	y' = y \quad \text{avec} \quad y(0) = 1.
+	\]
+	Autrement dit, la fonction exponentielle est la seule fonction qui est égale à sa propre dérivée.
+	
+	\subsection{Propriétés fondamentales}
+	
+	La fonction exponentielle présente plusieurs propriétés importantes :
+	\begin{itemize}
+		\item \( e^0 = 1 \)
+		\item \( e^{x+y} = e^x \cdot e^y \)
+		\item \( e^{-x} = \frac{1}{e^x} \)
+	\end{itemize}
+	
+	\subsection{Dérivée et primitive}
+	
+	La dérivée et la primitive de la fonction exponentielle sont données par :
+	\[
+	\frac{d}{dx} e^x = e^x \quad \text{et} \quad \int e^x \, dx = e^x + C.
+	\]
+	
+	\subsection{Applications}
+	
+	La fonction exponentielle intervient dans de nombreux domaines :
+	\begin{itemize}
+		\item Croissance exponentielle : Modélisation de la croissance démographique, des intérêts composés, etc.
+		\item Décroissance exponentielle : Modélisation de la désintégration radioactive, du refroidissement, etc.
+	\end{itemize}
+	                                                                    \section{Introduction aux fonctions logarithmiques}
+	                                                                    
+	                                                                    \subsection{Définition de la fonction logarithmique}
+	                                                                    
+	                                                                    La fonction logarithmique, notée \( \ln(x) \), est l'inverse de la fonction exponentielle. Autrement dit, pour tout réel positif \( y \), le logarithme naturel de \( y \) est le nombre \( x \) tel que :
+	                                                                    \[
+	                                                                    e^x = y \quad \text{soit} \quad x = \ln(y).
+	                                                                    \]
+	                                                                    
+	                                                                    \subsection{Propriétés fondamentales}
+	                                                                    
+	                                                                    La fonction logarithmique possède plusieurs propriétés intéressantes :
+	                                                                    \begin{itemize}
+	                                                                    	\item \( \ln(1) = 0 \)
+	                                                                    	\item \( \ln(ab) = \ln(a) + \ln(b) \) pour tous \( a > 0 \) et \( b > 0 \)
+	                                                                    	\item \( \ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b) \)
+	                                                                    	\item \( \ln(a^b) = b \cdot \ln(a) \)
+	                                                                    \end{itemize}
+	                                                                    
+	                                                                    \subsection{Dérivée et primitive de la fonction logarithmique}
+	                                                                    
+	                                                                    La dérivée de la fonction logarithmique est donnée par :
+	                                                                    \[
+	                                                                    \frac{d}{dx} \ln(x) = \frac{1}{x}, \quad \text{pour} \quad x > 0.
+	                                                                    \]
+	                                                                    Sa primitive est :
+	                                                                    \[
+	                                                                    \int \ln(x) \, dx = x \ln(x) - x + C.
+	                                                                    \]
+	                                                                    
+	                                                                    \subsection{Exemples d'utilisation}
+	                                                                    
+	                                                                    \begin{itemize}
+	                                                                    	\item Résolution d'équations exponentielles : Le logarithme permet de résoudre des équations comme \( e^x = a \), ce qui donne \( x = \ln(a) \).
+	                                                                    	\item Applications : Le logarithme naturel est utilisé dans des domaines tels que la finance pour calculer des taux de croissance, ou en physique pour modéliser des phénomènes comme la décroissance radioactive.
+	                                                                    \end{itemize}
+	                                                                                                                                                                                  
+	
+	\section{Lien entre logarithme et exponentielle}
+	
+	\subsection{Relation fondamentale}
+	
+	La fonction exponentielle et la fonction logarithmique sont réciproques l'une de l'autre. Pour tout réel \( x \) et pour tout \( y > 0 \), on a :
+	\[
+	e^{\ln(x)} = x \quad \text{et} \quad \ln(e^x) = x.
+	\]
+	
+	\subsection{Comportement asymptotique}
+	
+	En étudiant les limites des fonctions logarithmique et exponentielle, on obtient les résultats suivants :
+	\[
+	\lim_{x \to +\infty} e^x = +\infty, \quad \lim_{x \to -\infty} e^x = 0,
+	\]
+	\[
+	\lim_{x \to 0^+} \ln(x) = -\infty, \quad \lim_{x \to +\infty} \ln(x) = +\infty.
+	\]
+	
+	\subsection{Inversibilité}
+	
+	La fonction exponentielle étant strictement croissante et toujours positive, elle est bijective sur \( \mathbb{R} \). De même, la fonction logarithmique est strictement croissante et définie pour \( x > 0 \). Par conséquent, la fonction logarithmique est l'inverse de la fonction exponentielle, et réciproquement.
+	\section{Propriétés avancées des fonctions logarithmiques et exponentielles}
+	
+	\subsection{Croissance et décroissance exponentielles}
+	
+	Les fonctions exponentielles modélisent des phénomènes de croissance et de décroissance dans de nombreux domaines. On distingue :
+	\begin{itemize}
+		\item Croissance exponentielle : Modélisée par \( e^{kt} \) avec \( k > 0 \), cette fonction représente une augmentation rapide.
+		\item Décroissance exponentielle : Modélisée par \( e^{-kt} \), avec \( k > 0 \), elle décrit une diminution progressive, comme dans la désintégration radioactive.
+	\end{itemize}
+	
+	\subsection{Fonction exponentielle complexe}
+	
+	L'exponentielle peut être étendue au domaine des nombres complexes. Pour tout \( z = x + iy \in \mathbb{C} \), la fonction exponentielle est définie par :
+	\[
+	e^z = e^x \cdot \left( \cos(y) + i\sin(y) \right).
+	\]
+	Cela permet de relier les fonctions exponentielles aux fonctions trigonométriques, notamment via la formule d'Euler :
+	\[
+	e^{ix} = \cos(x) + i\sin(x).
+	\]
+	
+	\subsection{Théorèmes et inégalités associées}
+	
+	Les fonctions exponentielles et logarithmiques obéissent à plusieurs inégalités classiques :
+	\begin{itemize}
+		\item \( e^x \geq 1 + x \) pour tout \( x \in \mathbb{R} \)
+		\item Pour tout \( x > 0 \), \( \ln(x) \leq x - 1 \)
+		\item Pour tout \( x \in \mathbb{R} \), \( e^{-x} \geq 0 \) et \( \ln(x) \) est défini seulement pour \( x > 0 \)
+	\end{itemize}
+
+	
+	\section{Équations exponentielles et logarithmiques}
+	
+	\subsection{Résolution d'équations exponentielles}
+	
+	Les équations exponentielles sont des équations où l'inconnue figure dans l'exposant. Pour résoudre ces équations, on utilise souvent le logarithme naturel. Voici les étapes générales pour résoudre une équation exponentielle :
+	
+	\begin{itemize}
+		\item Exemple 1 : Résoudre \( e^x = a \) pour \( a > 0 \).\\
+		En prenant le logarithme naturel des deux côtés, on obtient :
+		\[
+		\ln(e^x) = \ln(a) \quad \Rightarrow \quad x = \ln(a).
+		\]
+		
+		\item Exemple 2 : Résoudre \( 2e^{3x} = 5 \).\\
+		Diviser d'abord par 2 :
+		\[
+		e^{3x} = \frac{5}{2},
+		\]
+		puis prendre le logarithme naturel des deux côtés :
+		\[
+		3x = \ln\left(\frac{5}{2}\right) \quad \Rightarrow \quad x = \frac{\ln\left(\frac{5}{2}\right)}{3}.
+		\]
+	\end{itemize}
+	
+	\subsection{Résolution d'équations logarithmiques}
+	
+	Les équations logarithmiques sont des équations où l'inconnue figure sous un logarithme. Voici les étapes pour résoudre ce type d'équations :
+	
+	\begin{itemize}
+		\item Exemple 1 : Résoudre \( \ln(x) = a \).\\
+		En exponentiant des deux côtés, on obtient :
+		\[
+		x = e^a.
+		\]
+		
+		\item Exemple 2 : Résoudre \( \ln(3x) = 4 \).\\
+		En exponentiant des deux côtés, on a :
+		\[
+		3x = e^4 \quad \Rightarrow \quad x = \frac{e^4}{3}.
+		\]
+	\end{itemize}
+	
+	\subsection{Combinaison des fonctions exponentielles et logarithmiques}
+	
+	Il est fréquent de rencontrer des équations qui combinent des fonctions exponentielles et logarithmiques. Par exemple, pour résoudre une équation de la forme \( e^{\ln(x)} = x \), on utilise la relation fondamentale entre ces deux fonctions :
+	\[
+	e^{\ln(x)} = x.
+	\]
+	De même, pour des équations plus complexes, on peut combiner les propriétés des logarithmes et des exponentielles pour simplifier et résoudre l'équation.
+	
+	\section{Limites des fonctions exponentielles et logarithmiques}
+	
+	\subsection{Limites de la fonction exponentielle}
+	
+	La fonction exponentielle présente des comportements asymptotiques importants. Voici quelques résultats classiques :
+	
+\begin{itemize}
+	\item \(\displaystyle \lim_{x \to +\infty} e^x = +\infty \)
+	\item \(\displaystyle \lim_{x \to -\infty} e^x = 0 \)
+	\item \(\displaystyle \lim_{x \to 0} e^x = 1 \)
+	\item \(\displaystyle \lim_{x \to 0^+} \frac{ e^x - 1}{x} = 1 \)
+\end{itemize}
+
+	
+	La fonction exponentielle croît très rapidement lorsque \( x \to +\infty \), et tend vers 0 lorsque \( x \to -\infty \). Elle tend aussi vers 1 lorsque \( x \) s'approche de 0.
+	
+	\subsection{Limites de la fonction logarithmique}
+	
+	La fonction logarithmique naturelle \( \ln(x) \) présente des comportements asymptotiques opposés à ceux de la fonction exponentielle :
+	
+\begin{itemize}
+	\item \(\displaystyle \lim_{x \to +\infty} \ln(x) = +\infty \)
+	\item \(\displaystyle \lim_{x \to 0^+} \ln(x) = -\infty \)
+	\item \(\displaystyle \lim_{x \to 1} \frac{\ln(x)}{x - 1} = 1 \)
+	\item \(\displaystyle \lim_{x \to 0^+} x \ln(x) = 0 \)
+\end{itemize}
+
+	
+	La fonction logarithmique croît donc vers \( +\infty \) à l'infini et vers \( -\infty \) à proximité de 0 (en restant définie uniquement pour \( x > 0 \)).
+	
+	\subsection{Limites de quotients exponentiels et logarithmiques}
+	
+	On retrouve souvent des limites impliquant des rapports entre fonctions exponentielles et logarithmiques. Voici quelques exemples classiques :
+	
+\begin{itemize}
+	\item \(\displaystyle \lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \quad \text{pour tout} \quad n \in \mathbb{N} \)
+	\item La fonction exponentielle croît plus rapidement que toute puissance de \( x \) à l'infini.
+	
+	\item \(\displaystyle \lim_{x \to +\infty} \frac{\ln(x)}{x^n} = 0 \quad \text{pour tout} \quad n \in \mathbb{N} \)
+	\item La fonction logarithmique croît plus lentement que toute puissance de \( x \) à l'infini.
+	
+	\item \(\displaystyle \lim_{x \to +\infty} \frac{x^n}{e^x} = 0 \quad \text{pour tout} \quad n \in \mathbb{N} \)
+	\item La fonction exponentielle croît plus rapidement que tout polynôme à l'infini.
+	
+	\item \(\displaystyle \lim_{x \to 0^+} \frac{x^n}{\ln\left(\frac{1}{x}\right)} = 0 \quad \text{pour tout} \quad n \in \mathbb{N} \)
+\end{itemize}
+
+	
+	\subsection{Limites indéterminées}
+	
+	Les fonctions exponentielles et logarithmiques peuvent donner lieu à des formes indéterminées telles que \( \frac{0}{0} \) ou \( \frac{\infty}{\infty} \), nécessitant l'utilisation de la règle de L'Hôpital ou d'autres techniques pour les résoudre.
+	
+\begin{itemize}
+	\item Exemple : \(\displaystyle \lim_{x \to 0^+} \frac{\ln(x)}{x} = -\infty \)
+	
+	\item Exemple : \(\displaystyle \lim_{x \to +\infty} \frac{\ln(x)}{e^x} = 0 \)
+	
+	\item Exemple : \(\displaystyle \lim_{x \to 0^+} \frac{1 - e^x}{x} = -1 \)
+\end{itemize}
+
+	\section{Dérivées des fonctions exponentielles et logarithmiques}
+	
+	\subsection{Dérivée de la fonction exponentielle}
+	
+	La fonction exponentielle \( e^x \) a la propriété remarquable que sa dérivée est elle-même. En effet, on a :
+	\[
+	\frac{d}{dx} e^x = e^x.
+	\]
+	Plus généralement, pour une fonction de la forme \( e^{u(x)} \), où \( u(x) \) est une fonction de \( x \), la règle de dérivation en chaîne s'applique :
+	\[
+	\frac{d}{dx} e^{u(x)} = e^{u(x)} \cdot u'(x).
+	\]
+	
+	\subsection{Dérivée de la fonction logarithmique}
+	
+	La dérivée de la fonction logarithmique naturelle \( \ln(x) \) est donnée par :
+	\[
+	\frac{d}{dx} \ln(x) = \frac{1}{x} , \quad x > 0.
+	\]
+	Si \( u(x) \) est une fonction de \( x \), alors la dérivée de \( \ln(u(x)) \) s'écrit :
+	\[
+	\frac{d}{dx} \ln(u(x)) = \frac{u'(x)}{u(x)}.
+	\]
+	
+	\subsection{Exemples de dérivées}
+	
+	Voici quelques exemples d'application de ces règles de dérivation :
+	
+	\begin{itemize}
+		\item Dérivée de \( e^{3x} \) :
+		\[
+		\frac{d}{dx} e^{3x} = 3e^{3x}.
+		\]
+		
+		\item Dérivée de \( \ln(2x) \) :
+		\[
+		\frac{d}{dx} \ln(2x) = \frac{1}{x}.
+		\]
+		
+		\item Dérivée de \( e^{x^2} \) :
+		\[
+		\frac{d}{dx} e^{x^2} = 2x e^{x^2}.
+		\]
+		
+		\item Dérivée de \( \ln(x^2 + 1) \) :
+		\[
+		\frac{d}{dx} \ln(x^2 + 1) = \frac{2x}{x^2 + 1}.
+		\]
+	\end{itemize}
+	
+	\subsection{Dérivées des fonctions exponentielles avec bases différentes}
+	
+	La fonction exponentielle avec une base différente de \( e \), comme \( a^x \), se dérive de la manière suivante :
+	\[
+	\frac{d}{dx} a^x = a^x \ln(a).
+	\]
+	Par exemple, pour la base 10, on a :
+	\[
+	\frac{d}{dx} 10^x = 10^x \ln(10).
+	\]
+	
+		\section{Applications des fonctions exponentielles et logarithmiques}
+	
+	\subsection{Croissance et décroissance exponentielles}
+	
+	Les fonctions exponentielles sont utilisées pour modéliser des phénomènes de croissance et de décroissance dans plusieurs domaines :
+	\begin{itemize}
+		\item Croissance démographique: Modélisée par \( P(t) = P_0 e^{kt} \), où \( P_0 \) est la population initiale et \( k > 0 \) est le taux de croissance.
+		\item Intérêts composés : En finance, les intérêts composés continus sont donnés par la formule \( A = P e^{rt} \), où \( P \) est le capital initial, \( r \) est le taux d'intérêt, et \( t \) est le temps.
+		\item Désintégration radioactive : Le phénomène de décroissance radioactive est décrit par \( N(t) = N_0 e^{-\lambda t} \), où \( N_0 \) est la quantité initiale et \( \lambda \) est la constante de désintégration.
+	\end{itemize}
+	
+	\subsection{Calcul du taux de croissance ou de décroissance}
+	
+	La fonction logarithmique permet de déterminer le taux de croissance ou de décroissance à partir d'une équation exponentielle. Par exemple, pour une population \( P(t) = P_0 e^{kt} \), le taux de croissance \( k \) peut être trouvé en prenant le logarithme naturel :
+	\[
+	k = \frac{\ln\left( \frac{P(t)}{P_0} \right)}{t}.
+	\]
+	
+	\subsection{Équations différentielles}
+	
+	Les fonctions exponentielles apparaissent fréquemment dans la résolution d'équations différentielles. Par exemple, la solution générale de l'équation différentielle \( y' = ky \) est donnée par :
+	\[
+	y(t) = C e^{kt},
+	\]
+	où \( C \) est une constante déterminée par les conditions initiales.
+	
+	\subsection{Applications physiques}
+	
+	En physique, la loi de refroidissement de Newton stipule que la température d'un objet change proportionnellement à la différence entre sa température et celle du milieu ambiant. Cela se traduit par une décroissance exponentielle de la forme :
+	\[
+	T(t) = T_{\text{amb}} + (T_0 - T_{\text{amb}}) e^{-kt}.
+	\]
+	
+	
+	
+\end{document}
