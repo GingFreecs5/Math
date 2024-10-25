@@ -1,0 +1,135 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Exercices sur les Limites}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	
+
+	
+	
+	\subsection*{Exercice 1}
+	Calculez les limites suivantes :
+	\[
+	\lim_{x \to 0} \frac{\sin(x)}{x}
+	\]
+	\[
+	\lim_{x \to +\infty} \frac{1}{x^2}
+	\]
+	\[
+	\lim_{x \to 1} \frac{x^2 - 1}{x - 1}
+	\]
+	
+	\subsection*{Exercice 2}
+	Étudiez les limites suivantes, en précisant s'il s'agit de formes indéterminées. Si oui, appliquez la règle de L'Hôpital si nécessaire.
+	\[
+	\lim_{x \to +\infty} \frac{e^x}{x^n} \quad \text{pour tout} \quad n \in \mathbb{N}
+	\]
+	\[
+	\lim_{x \to 0^+} \frac{1}{x}
+	\]
+	\[
+	\lim_{x \to 0^+} \frac{\sin(x)}{x}
+	\]
+	
+	\subsection*{Exercice 3}
+	Montrez que :
+	\[
+	\lim_{x \to 0^+} \frac{1}{x} = +\infty
+	\]
+	\[
+	\lim_{x \to 0^+} \frac{x^2}{x} = 0
+	\]
+	
+	\subsection*{Exercice 4}
+	Calculez :
+	\[
+	\lim_{x \to 0^+} \frac{e^x - 1}{x}
+	\]
+	\[
+	\lim_{x \to +\infty} \frac{x}{e^x}
+	\]
+	
+	\subsection*{Exercice 5}
+	Comparez les comportements asymptotiques des fonctions suivantes :
+	\[
+	\lim_{x \to +\infty} \frac{x^n}{e^x} \quad \text{pour tout} \quad n \in \mathbb{N}
+	\]
+	\[
+	\lim_{x \to +\infty} \frac{x^n}{x^{n+1}}
+	\]
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+\end{document}

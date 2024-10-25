@@ -1,0 +1,146 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Exercices sur la continuité et la dérivabilité}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+
+	
+	\subsection*{Exercice 1}
+	Soit la fonction \( f(x) = 
+	\begin{cases}
+		2x + 1 & \text{si } x \leq 1, \\
+		x^2 & \text{si } x > 1.
+	\end{cases}
+	\)
+	\begin{itemize}
+		\item \( f \) est-elle continue en \( x = 1 \) ?
+		\item Si non, modifiez la fonction pour qu'elle devienne continue en \( x = 1 \).
+	\end{itemize}
+	
+	\subsection*{Exercice 2}
+	Soit la fonction \( f(x) = \frac{1}{x} \). Étudiez la continuité de cette fonction sur son domaine de définition.
+	
+	\subsection*{Exercice 3}
+	Soit la fonction \( g(x) = |x| \). 
+	\begin{itemize}
+		\item La fonction \( g \) est-elle dérivable en \( x = 0 \) ?
+	
+	\end{itemize}
+	
+	\subsection*{Exercice 4}
+	Calculez les dérivées des fonctions suivantes :
+	\[
+	f(x) = x^3 + 2x^2 - 5x + 7
+	\]
+	\[
+	g(x) = \frac{1}{x^2}
+	\]
+	\[
+	h(x) = \sqrt{x}
+	\]
+	
+	\subsection*{Exercice 5}
+	Soit la fonction \( f(x) = e^x \). 
+	\begin{itemize}
+		\item Montrez que \( f \) est dérivable sur \( \mathbb{R} \).
+		\item Calculez \( f'(x) \).
+	\end{itemize}
+	
+	\subsection*{Exercice 6}
+	Étudiez la continuité et la dérivabilité de la fonction suivante :
+	\[
+	f(x) = \frac{x^2 - 1}{x - 1}
+	\]
+	pour \( x \neq 1 \).
+	
+\subsection*{Exercice 7 : Étude de fonctions usuelles}
+Étudiez les fonctions suivantes :
+\begin{itemize}
+	\item \( f_1(x) = x \)
+	\item \( f_2(x) = x^2 \)
+	\item \( f_3(x) = \frac{1}{x} \)
+	\item \( f_4(x) = \sqrt{x} \)
+	\item \( f_5(x) = \sin(x) \)
+	\item \( f_7(x) = \tan(x) \)
+\end{itemize}
+
+
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}

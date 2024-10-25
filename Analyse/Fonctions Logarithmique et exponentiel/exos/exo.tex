@@ -1,0 +1,120 @@
+\documentclass{article}
+
+
+
+% Language setting
+
+% Replace `english' with e.g. `spanish' to change the document language
+
+\usepackage[english]{babel}
+
+
+
+% Set page size and margins
+
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+
+% Useful packages
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{titlesec}
+\usepackage{xparse}
+
+
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+
+
+\title{\textbf{Exercices sur les fonctions logarithmiques et exponentiels}}
+
+\author{\textbf{Yassin Akkab}}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+
+
+
+
+\graphicspath{ {./Screenshots/} }
+
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 : Étude de la fonction exponentielle}
+	Étudiez la continuité et la dérivabilité de la fonction \( f(x) = e^x \) sur \( \mathbb{R} \).
+	\begin{itemize}
+	
+		\item Calculez la limite de \( e^x \) lorsque \( x \to +\infty \) et \( x \to -\infty \).
+			\item Déterminez la dérivée de \( f(x) \).
+	\end{itemize}
+	
+	\subsection*{Exercice 2 : Étude de la fonction logarithme népérien}
+	Étudiez la continuité et la dérivabilité de la fonction \( g(x) = \ln(x) \) sur \( ]0, +\infty[ \).
+	\begin{itemize}
+	
+		\item Calculez la limite de \( \ln(x) \) lorsque \( x \to 0^+ \) et \( x \to +\infty \).
+			\item Déterminez la dérivée de \( g(x) \).
+	\end{itemize}
+	
+	\subsection*{Exercice 3 : Limites et dérivées combinées}
+	Calculez les limites suivantes :
+	\[
+	\lim_{x \to 0^+} \frac{\ln(x)}{x}, \quad \lim_{x \to 0^+} x \ln(x), \quad \lim_{x \to 0^+} \frac{1 - e^x}{x}
+	\]
+	
+
+	
+	\subsection*{Exercice 4 : Étude de la fonction \( f(x) = e^{-x} \)}
+	Étudiez la continuité et la dérivabilité de \( f(x) = e^{-x} \) sur \( \mathbb{R} \).
+	\begin{itemize}
+		\item Déterminez la dérivée de \( f(x) \).
+		\item Calculez les limites de \( e^{-x} \) lorsque \( x \to +\infty \) et \( x \to -\infty \).
+	\end{itemize}
+	
+	\subsection*{Exercice 5 : Dérivée de la fonction composée}
+		Etudiez les fonctions suivantes : 
+	\[
+	f(x) = e^{x^2}, \quad g(x) = \ln(x^2 + 1)
+	\]
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
