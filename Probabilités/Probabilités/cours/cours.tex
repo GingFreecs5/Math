@@ -1,0 +1,119 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Probabilités et Dénombrement}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Dénombrement}
+	Le dénombrement consiste à compter le nombre d'éléments dans un ensemble fini.
+	Soit $E$ un ensemble fini à $n$ éléments.
+	
+	\subsection{Arrangements et permutations}
+	\begin{itemize}
+		\item Un \textbf{arrangement} de $p$ éléments de $E$ (avec $1 \le p \le n$) est une suite ordonnée de $p$ éléments distincts de $E$.
+		Le nombre d'arrangements de $p$ éléments parmi $n$ est noté $A_n^p$ et vaut :
+		\[ A_n^p = \frac{n!}{(n-p)!} = n(n-1)\dots(n-p+1) \]
+		\item Une \textbf{permutation} de $E$ est un arrangement de $n$ éléments de $E$ (c'est-à-dire un ordre sur les $n$ éléments).
+		Le nombre de permutations de $E$ est :
+		\[ n! = n \times (n-1) \times \dots \times 1 \quad (\text{avec } 0! = 1) \]
+	\end{itemize}
+	
+	\subsection{Combinaisons}
+	Une \textbf{combinaison} de $p$ éléments de $E$ (avec $0 \le p \le n$) est un sous-ensemble (sans ordre) de $p$ éléments de $E$.
+	Le nombre de combinaisons de $p$ éléments parmi $n$ est noté $\binom{n}{p}$ ou $C_n^p$ et vaut :
+	\[ \binom{n}{p} = \frac{A_n^p}{p!} = \frac{n!}{p!(n-p)!} \]
+	Propriétés :
+	\begin{itemize}
+		\item $\binom{n}{p} = \binom{n}{n-p}$
+		\item \textbf{Formule de Pascal} : $\binom{n}{p} + \binom{n}{p+1} = \binom{n+1}{p+1}$
+		\item \textbf{Formule du binôme de Newton} : Pour tous réels $a$ and $b$,
+		\[ (a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k} \]
+	\end{itemize}
+	
+	\section{Espace probabilisé fini}
+	
+	\subsection{Vocabulaire}
+	* L'ensemble $\Omega$ de tous les résultats possibles d'une expérience aléatoire est appelé \textbf{l'univers}.
+	* Un \textbf{événement} est une partie de $\Omega$.
+	* Deux événements $A$ et $B$ sont \textbf{incompatibles} si $A \cap B = \emptyset$.
+	
+	\subsection{Probabilité uniforme}
+	Si tous les événements élémentaires ont la même probabilité de se réaliser (équiprobabilité), la probabilité d'un événement $A$ est :
+	\[ P(A) = \frac{\text{card}(A)}{\text{card}(\Omega)} = \frac{\text{Nombre de cas favorables}}{\text{Nombre de cas possibles}} \]
+	
+	\section{Probabilités conditionnelles et indépendance}
+	
+	\subsection{Définition}
+	Soient $A$ et $B$ deux événements tels que $P(A) > 0$.
+	La \textbf{probabilité conditionnelle} de $B$ sachant que $A$ est réalisé, notée $P_A(B)$ ou $P(B \mid A)$, est définie par :
+	\[ P_A(B) = \frac{P(A \cap B)}{P(A)} \]
+	
+	\subsection{Formule des probabilités totales}
+	Soit $\{A_1, A_2, \dots, A_k\}$ une partition de l'univers $\Omega$ (c'est-à-dire des événements incompatibles deux à deux et dont la réunion est $\Omega$) tels que $P(A_i) > 0$. Pour tout événement $B$ :
+	\[ P(B) = \sum_{i=1}^k P(B \cap A_i) = \sum_{i=1}^k P(A_i) \cdot P_{A_i}(B) \]
+	
+	\subsection{Indépendance}
+	\begin{itemize}
+		\item Deux événements $A$ et $B$ sont dits \textbf{indépendants} si :
+		\[ P(A \cap B) = P(A) \cdot P(B) \]
+		Si $P(A) > 0$, cela équivaut à $P_A(B) = P(B)$.
+	\end{itemize}
+	
+	\section{Variables aléatoires et lois usuelles}
+	
+	\subsection{Définition}
+	Une \textbf{variable aléatoire} $X$ est une application définie sur $\Omega$ à valeurs dans $\mathbb{R}$.
+	* Déterminer la \textbf{loi de probabilité} de $X$ consiste à déterminer les valeurs $\{x_1, \dots, x_m\}$ prises par $X$ et à calculer les probabilités $P(X = x_i)$.
+	
+	\subsection{Indicateurs d'une variable aléatoire}
+	\begin{itemize}
+		\item \textbf{Espérance mathématique} :
+		\[ E(X) = \sum_{i=1}^m x_i P(X = x_i) \]
+		\item \textbf{Variance} :
+		\[ V(X) = E(X^2) - [E(X)]^2 = \sum_{i=1}^m x_i^2 P(X = x_i) - [E(X)]^2 \]
+		\item \textbf{Écart-type} : $\sigma(X) = \sqrt{V(X)}$.
+	\end{itemize}
+	
+	\subsection{Loi binomiale}
+	On répète $n$ fois de manière indépendante une même épreuve de Bernoulli (expérience à deux issues : Succès avec probabilité $p$, Échec avec probabilité $q = 1-p$).
+	Soit $X$ la variable aléatoire indiquant le nombre de succès obtenus.
+	La variable aléatoire $X$ suit la \textbf{loi binomiale} de paramètres $n$ et $p$, notée $\mathcal{B}(n, p)$.
+	La probabilité d'obtenir exactement $k$ succès est :
+	\[ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \quad (\text{pour } k \in \{0, \dots, n\}) \]
+	On a :
+	\[ E(X) = np \quad \text{et} \quad V(X) = np(1-p) \]
+	
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Probabilités et Dénombrement}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Dénombrement)}
+	Une urne contient 5 boules rouges, 3 boules vertes et 2 boules bleues. On tire simultanément 3 boules de l'urne.
+	\begin{enumerate}
+		\item Quel est le nombre total de tirages possibles ?
+		\item Combien de tirages contiennent 3 boules de la même couleur ?
+		\item Combien de tirages contiennent au moins une boule rouge ?
+	\end{enumerate}
+	
+	\subsection*{Exercice 2 (Probabilités conditionnelles)}
+	Dans une population, 40\% des individus sont vaccinés contre une maladie. La probabilité qu'un individu vacciné tombe malade est de 0,05. La probabilité qu'un individu non vacciné tombe malade est de 0,3.
+	On choisit un individu au hasard.
+	\begin{enumerate}
+		\item Quelle est la probabilité que cet individu soit malade ?
+		\item Sachant que l'individu choisi est malade, quelle est la probabilité qu'il soit vacciné ?
+	\end{enumerate}
+	
+	\subsection*{Exercice 3 (Variable aléatoire et loi binomiale)}
+	On lance 5 fois de suite un dé équilibré à 6 faces. On s'intéresse au nombre de fois où le dé affiche la face 6.
+	Soit $X$ la variable aléatoire représentant ce nombre.
+	\begin{enumerate}
+		\item Justifier que la variable aléatoire $X$ suit une loi binomiale et préciser ses paramètres.
+		\item Calculer la probabilité d'obtenir exactement deux fois la face 6.
+		\item Calculer l'espérance mathématique de $X$.
+	\end{enumerate}
+	
+\end{document}

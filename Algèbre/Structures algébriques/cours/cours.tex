@@ -1,0 +1,130 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Structures Algébriques}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Lois de composition interne (LCI)}
+	
+	\subsection{Définition}
+	Soit $E$ un ensemble. Une \textbf{loi de composition interne} (LCI) sur $E$ est une application :
+	\[ *: E \times E \to E, \quad (x, y) \mapsto x * y \]
+	
+	\subsection{Propriétés d'une LCI}
+	Soit $*$ une LCI sur $E$.
+	\begin{itemize}
+		\item \textbf{Associativité} : La loi $*$ est associative si :
+		\[ \qcq{x}[, y][, z]{E}, \quad (x * y) * z = x * (y * z) \]
+		\item \textbf{Commutativité} : La loi $*$ est commutative si :
+		\[ \qcq{x}[, y]{E}, \quad x * y = y * x \]
+		\item \textbf{Élément neutre} : Un élément $e \in E$ est un élément neutre pour $*$ si :
+		\[ \qcq{x}{E}, \quad x * e = e * x = x \]
+		S'il existe, l'élément neutre est unique.
+		\item \textbf{Élément symétrisable} : Si $E$ admet un élément neutre $e$, un élément $x \in E$ est dit symétrisable pour $*$ s'il existe $x' \in E$ tel que :
+		\[ x * x' = x' * x = e \]
+		$x'$ est appelé le symétrique de $x$. Si la loi est associative, le symétrique est unique.
+	\end{itemize}
+	
+	\section{Groupes et sous-groupes}
+	
+	\subsection{Définition d'un groupe}
+	Un \textbf{groupe} est un couple $(G, *)$ où $G$ est un ensemble et $*$ est une LCI sur $G$ vérifiant :
+	\begin{enumerate}
+		\item La loi $*$ est associative.
+		\item La loi $*$ admet un élément neutre $e \in G$.
+		\item Tout élément de $G$ admet un symétrique dans $G$ pour la loi $*$.
+	\end{enumerate}
+	Si de plus la loi $*$ est commutative, le groupe est dit \textbf{commutatif} (ou \textbf{abélien}).
+	
+	\subsection{Sous-groupes}
+	Soit $(G, *)$ un groupe d'élément neutre $e$. Une partie non vide $H$ de $G$ est un \textbf{sous-groupe} de $(G, *)$ si $(H, *)$ est lui-même un groupe.
+	\textbf{Caractérisation d'un sous-groupe} :
+	$H$ est un sous-groupe de $(G, *)$ si et seulement si :
+	\begin{enumerate}
+		\item $H \ne \emptyset$ (en particulier, $e \in H$).
+		\item $\qcq{x}[, y]{H}, \quad x * y' \in H$ (où $y'$ est le symétrique de $y$).
+	\end{enumerate}
+	
+	\subsection{Morphismes de groupes}
+	Soient $(G, *)$ et $(F, \cdot)$ deux groupes. Un \textbf{morphisme de groupes} de $(G, *)$ dans $(F, \cdot)$ est une application $f: G \to F$ telle que :
+	\[ \qcq{x}[, y]{G}, \quad f(x * y) = f(x) \cdot f(y) \]
+	Si $f$ est bijective, on dit que c'est un \textbf{isomorphisme} de groupes.
+	
+	\section{Anneaux et Corps}
+	
+	\subsection{Anneaux}
+	Un \textbf{anneau} est un triplet $(A, +, \cdot)$ où $A$ est un ensemble muni de deux LCI $+$ et $\cdot$ telles que :
+	\begin{enumerate}
+		\item $(A, +)$ est un groupe commutatif (d'élément neutre noté 0).
+		\item La loi $\cdot$ est associative et distributive par rapport à $+$ :
+		\[ \qcq{x}[, y][, z]{A}, \quad x \cdot (y + z) = x \cdot y + x \cdot z \quad \text{et} \quad (y + z) \cdot x = y \cdot x + z \cdot x \]
+	\end{enumerate}
+	Si de plus la loi $\cdot$ admet un élément neutre (noté 1), l'anneau est dit \textbf{unitaire}. Si $\cdot$ est commutative, l'anneau est dit \textbf{commutatif}.
+	
+	\subsection{Corps}
+	Un \textbf{corps} est un triplet $(K, +, \cdot)$ tel que :
+	\begin{enumerate}
+		\item $(K, +, \cdot)$ est un anneau unitaire commutatif avec $0 \ne 1$.
+		\item Tout élément de $K \setminus \{0\}$ est symétrisable pour la loi $\cdot$ (admet un inverse).
+	\end{enumerate}
+	Exemples : $(\mathbb{Q}, +, \cdot)$, $(\mathbb{R}, +, \cdot)$ et $(\mathbb{C}, +, \cdot)$ sont des corps.
+	
+	\section{Espaces vectoriels réels}
+	
+	\subsection{Définition}
+	Un \textbf{espace vectoriel réel} est un ensemble $E$ muni d'une loi de composition interne $+$ (loi interne) et d'une loi de composition externe $\cdot$ de $\mathbb{R} \times E$ dans $E$ (loi externe) vérifiant des propriétés de compatibilité :
+	\begin{enumerate}
+		\item $(E, +)$ est un groupe commutatif.
+		\item $\qcq{\lambda}[, \mu]{R}$, $\qcq{\vec{u}}[, \vec{v}]{E}$ :
+		\begin{itemize}
+			\item $\lambda \cdot (\vec{u} + \vec{v}) = \lambda \cdot \vec{u} + \lambda \cdot \vec{v}$
+			\item $(\lambda + \mu) \cdot \vec{u} = \lambda \cdot \vec{u} + \mu \cdot \vec{u}$
+			\item $(\lambda\mu) \cdot \vec{u} = \lambda \cdot (\mu \cdot \vec{u})$
+			\item $1 \cdot \vec{u} = \vec{u}$
+		\end{itemize}
+	\end{enumerate}
+	Les éléments de $E$ sont appelés des \textbf{vecteurs} et ceux de $\mathbb{R}$ des \textbf{scalaires}.
+	
+	\subsection{Sous-espaces vectoriels}
+	Une partie non vide $F$ de $E$ est un \textbf{sous-espace vectoriel} (sev) de $E$ si $F$ muni des lois induites est un espace vectoriel.
+	\textbf{Caractérisation} :
+	$F$ est un sous-espace vectoriel de $E$ si et seulement si :
+	\begin{enumerate}
+		\item $F \ne \emptyset$ (en particulier, $\vec{0}_E \in F$).
+		\item $\qcq{\lambda}[, \mu]{R}$, $\qcq{\vec{u}}[, \vec{v}]{F}, \quad \lambda\vec{u} + \mu\vec{v} \in F$.
+	\end{enumerate}
+	
+\end{document}

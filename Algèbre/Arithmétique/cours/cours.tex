@@ -1,0 +1,118 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Arithmétique dans $\mathbb{Z}$}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Divisibilité et division euclidienne}
+	
+	\subsection{Divisibilité dans $\mathbb{Z}$}
+	Soient $a$ et $b$ deux entiers relatifs. On dit que $a$ \textbf{divise} $b$ (ou que $b$ est un \textbf{multiple} de $a$), et on note $a \mid b$, s'il existe un entier relatif $k$ tel que :
+	\[ b = k \cdot a \]
+	Propriétés :
+	\begin{itemize}
+		\item Si $a \mid b$ et $b \mid c$, alors $a \mid c$.
+		\item Si $a \mid b$ et $a \mid c$, alors pour tous entiers $\alpha$ and $\beta$, $a \mid (\alpha b + \beta c)$.
+		\item Si $a \mid b$ et $b \ne 0$, alors $|a| \le |b|$.
+	\end{itemize}
+	
+	\subsection{Division euclidienne}
+	\textbf{Théorème} : Pour tout entier relatif $a$ et tout entier naturel non nul $b$, il existe un unique couple d'entiers relatifs $(q, r)$ tel que :
+	\[ a = bq + r \quad \text{avec} \quad 0 \le r < b \]
+	$q$ est le quotient et $r$ est le reste de la division euclidienne de $a$ par $b$.
+	
+	\section{PGCD et PPCM}
+	
+	\subsection{Plus Grand Commun Diviseur (PGCD)}
+	Soient $a$ et $b$ deux entiers non tous deux nuls. Le plus grand diviseur commun positif de $a$ et $b$ est noté $\text{pgcd}(a, b)$ ou $a \wedge b$.
+	\begin{itemize}
+		\item Deux entiers $a$ et $b$ sont dits \textbf{premiers entre eux} si $\text{pgcd}(a, b) = 1$.
+		\item \textbf{Algorithme d'Euclide} : Si $a = bq + r$, alors $\text{pgcd}(a, b) = \text{pgcd}(b, r)$. On répète les divisions euclidiennes jusqu'à obtenir un reste nul. Le dernier reste non nul est le PGCD.
+	\end{itemize}
+	
+	\subsection{Plus Petit Commun Multiple (PPCM)}
+	Soient $a$ et $b$ deux entiers non nuls. Le plus petit multiple commun strictement positif de $a$ et $b$ est noté $\text{ppcm}(a, b)$ ou $a \vee b$.
+	\textbf{Relation fondamentale} :
+	\[ (a \wedge b) \cdot (a \vee b) = |ab| \]
+	
+	\section{Théorèmes de Bézout et de Gauss}
+	
+	\subsection{Théorème de Bézout}
+	Soient $a$ et $b$ deux entiers relatifs non nuls.
+	\[ \text{pgcd}(a, b) = d \iff \ext{u}[, v][]{Z}, \quad au + bv = d \]
+	En particulier, $a$ et $b$ sont premiers entre eux si et seulement s'il existe deux entiers relatifs $u$ et $v$ tels que :
+	\[ au + bv = 1 \]
+	
+	\subsection{Théorème de Gauss}
+	Soient $a$, $b$ et $c$ trois entiers relatifs non nuls.
+	\[ \text{Si } a \mid bc \quad \text{et} \quad \text{pgcd}(a, b) = 1, \quad \text{alors } a \mid c \]
+	
+	\subsection{Équations diophantiennes $ax + by = c$}
+	Soit l'équation $(E) : ax + by = c$ d'inconnues $(x, y) \in \mathbb{Z}^2$.
+	\begin{itemize}
+		\item L'équation $(E)$ admet des solutions dans $\mathbb{Z}^2$ si et seulement si $c$ est un multiple de $\text{pgcd}(a, b)$.
+		\item Si $(x_0, y_0)$ est une solution particulière de $(E)$ et $d = \text{pgcd}(a, b)$, avec $a = a'd$ et $b = b'd$, la solution générale est :
+		\[ x = x_0 + kb', \quad y = y_0 - ka' \quad (\text{où } k \in \mathbb{Z}) \]
+	\end{itemize}
+	
+	\section{Congruences dans $\mathbb{Z}$}
+	
+	\subsection{Définition et compatibilité}
+	Soit $n$ un entier naturel supérieur ou égal à 2. Deux entiers $a$ et $b$ sont dits \textbf{congrus modulo $n$}, et on note $a \equiv b \pmod n$, si $a - b$ est un multiple de $n$.
+	La relation de congruence est une relation d'équivalence compatible avec l'addition et la multiplication :
+	Si $a \equiv b \pmod n$ et $c \equiv d \pmod n$, alors :
+	\begin{itemize}
+		\item $a + c \equiv b + d \pmod n$
+		\item $a \cdot c \equiv b \cdot d \pmod n$
+		\item $\qcq{k}{N}, \quad a^k \equiv b^k \pmod n$
+	\end{itemize}
+	
+	\section{Nombres premiers et Fermat}
+	
+	\subsection{Théorème fondamental de l'arithmétique}
+	Tout entier naturel $n \ge 2$ s'écrit de manière unique sous la forme d'un produit de facteurs premiers :
+	\[ n = p_1^{\alpha_1} p_2^{\alpha_2} \dots p_k^{\alpha_k} \]
+	où $p_1 < p_2 < \dots < p_k$ sont des nombres premiers et $\alpha_i \in \mathbb{N}^*$.
+	
+	\subsection{Petit théorème de Fermat}
+	Soit $p$ un nombre premier et $a$ un entier relatif.
+	\begin{itemize}
+		\item De manière générale : $a^p \equiv a \pmod p$.
+		\item Si $p$ ne divise pas $a$ (c'est-à-dire $\text{pgcd}(a, p) = 1$) :
+		\[ a^{p-1} \equiv 1 \pmod p \]
+	\end{itemize}
+	
+\end{document}

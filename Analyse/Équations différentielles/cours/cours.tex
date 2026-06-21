@@ -1,0 +1,90 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Équations Différentielles}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Généralités}
+	Une équation différentielle est une équation reliant une fonction inconnue (souvent notée $y$) et une ou plusieurs de ses dérivées (notées $y', y'', \dots$).
+	\begin{itemize}
+		\item Résoudre ou intégrer une équation différentielle consiste à déterminer toutes les fonctions définies et dérivables sur un intervalle $I$ qui vérifient l'équation. Ces fonctions sont appelées les \textbf{solutions} de l'équation.
+		\item Si l'on impose des conditions aux limites ou des valeurs en un point (ex: $y(x_0) = y_0$), on parle de \textbf{problème de Cauchy} ou de conditions initiales.
+	\end{itemize}
+	
+	\section{Équations différentielles du premier ordre $y' = ay + b$}
+	Soient $a$ et $b$ deux nombres réels. On s'intéresse à l'équation :
+	\[ (E_1) : y' = ay + b \]
+	
+	\subsection{Résolution générale}
+	\textbf{Théorème} : Les solutions sur $\mathbb{R}$ de l'équation différentielle $(E_1)$ sont les fonctions de la forme :
+	\begin{itemize}
+		\item Si $a \ne 0$ :
+		\[ y(x) = C e^{ax} - \frac{b}{a} \quad (\text{où } C \in \mathbb{R}) \]
+		\item Si $a = 0$ :
+		\[ y(x) = bx + C \quad (\text{où } C \in \mathbb{R}) \]
+	\end{itemize}
+	
+	\subsection{Condition initiale}
+	Pour tout couple de réels $(x_0, y_0)$, il existe une \textbf{unique} solution $f$ de l'équation $(E_1)$ vérifiant la condition initiale $f(x_0) = y_0$.
+	
+	\section{Équations différentielles du second ordre $y'' + ay' + by = 0$}
+	Soient $a$ et $b$ deux nombres réels. On s'intéresse à l'équation linéaire homogène du second ordre à coefficients réels :
+	\[ (E_2) : y'' + ay' + by = 0 \]
+	
+	\subsection{Équation caractéristique}
+	On associe à l'équation $(E_2)$ l'équation algébrique du second degré appelée \textbf{équation caractéristique} :
+	\[ (EC) : r^2 + ar + b = 0 \]
+	Soit $\Delta = a^2 - 4b$ le discriminant de cette équation.
+	
+	\subsection{Résolution selon le signe de $\Delta$}
+	\begin{enumerate}
+		\item \textbf{Si $\Delta > 0$} :
+		L'équation caractéristique $(EC)$ admet deux solutions réelles distinctes $r_1$ et $r_2$.
+		Les solutions de l'équation $(E_2)$ sur $\mathbb{R}$ sont de la forme :
+		\[ y(x) = \alpha e^{r_1 x} + \beta e^{r_2 x} \quad (\text{où } (\alpha, \beta) \in \mathbb{R}^2) \]
+		
+		\item \textbf{Si $\Delta = 0$} :
+		L'équation caractéristique $(EC)$ admet une solution réelle double $r_0 = -\frac{a}{2}$.
+		Les solutions de l'équation $(E_2)$ sur $\mathbb{R}$ sont de la forme :
+		\[ y(x) = (\alpha x + \beta) e^{r_0 x} \quad (\text{où } (\alpha, \beta) \in \mathbb{R}^2) \]
+		
+		\item \textbf{Si $\Delta < 0$} :
+		L'équation caractéristique $(EC)$ admet deux solutions complexes conjuguées $r_1 = p + iq$ et $r_2 = p - iq$ (où $p, q \in \mathbb{R}$ et $q \ne 0$).
+		Les solutions de l'équation $(E_2)$ sur $\mathbb{R}$ sont de la forme :
+		\[ y(x) = e^{px} \left( \alpha \cos(qx) + \beta \sin(qx) \right) \quad (\text{où } (\alpha, \beta) \in \mathbb{R}^2) \]
+	\end{enumerate}
+	
+\end{document}

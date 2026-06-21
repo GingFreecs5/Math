@@ -1,0 +1,66 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Arithmétique dans $\mathbb{Z}$}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Division euclidienne et divisibilité)}
+	\begin{enumerate}
+		\item Montrer que pour tout entier relatif $n$, le nombre $n(n+1)(2n+1)$ est divisible par 6.
+		\item Déterminer tous les entiers relatifs $n$ tels que $n-3$ divise $n+5$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 2 (Algorithme d'Euclide et Bézout)}
+	Soit l'équation diophantienne suivante dans $\mathbb{Z}^2$ :
+	\[ (E) : 13x - 5y = 1 \]
+	\begin{enumerate}
+		\item Justifier que l'équation $(E)$ admet des solutions dans $\mathbb{Z}^2$.
+		\item Trouver une solution particulière $(x_0, y_0)$ de $(E)$.
+		\item Résoudre l'équation $(E)$ dans $\mathbb{Z}^2$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 3 (Congruences et restes)}
+	\begin{enumerate}
+		\item Déterminer le reste de la division euclidienne de $3^{2026}$ par 7.
+		\item Montrer que pour tout entier naturel $n$, le nombre $3^{2n+1} + 2^{n+2}$ est divisible par 7.
+	\end{enumerate}
+	
+	\subsection*{Exercice 4 (Théorème de Fermat)}
+	Soit $p$ un nombre premier impair.
+	\begin{enumerate}
+		\item Montrer que pour tout entier $x$, $x^p \equiv x \pmod p$.
+		\item Soit $a$ et $b$ deux entiers tels que $a^p \equiv b^p \pmod p$. Montrer que $a \equiv b \pmod p$.
+	\end{enumerate}
+	
+\end{document}

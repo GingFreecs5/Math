@@ -1,0 +1,117 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Suites Numériques}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Généralités sur les suites numériques}
+	
+	\subsection{Définition}
+	Une suite numérique $u$ est une fonction définie sur une partie $I$ de $\mathbb{N}$ (généralement $\mathbb{N}$ ou $\mathbb{N} \setminus \{0, \dots, n_0\}$) à valeurs dans $\mathbb{R}$.
+	On note $u_n$ l'image d'un entier $n$ par $u$, appelée le terme général de la suite. La suite elle-même est notée $(u_n)_{n \in I}$.
+	
+	\subsection{Majorabilité, minorabilité et suites bornées}
+	Soit $(u_n)_{n \ge n_0}$ une suite numérique.
+	\begin{itemize}
+		\item La suite $(u_n)$ est dite \textbf{majorée} s'il existe un réel $M$ tel que :
+		\[ \qcq{n}[\ge n_0]{N}, \quad u_n \le M \]
+		\item La suite $(u_n)$ est dite \textbf{minorée} s'il existe un réel $m$ tel que :
+		\[ \qcq{n}[\ge n_0]{N}, \quad u_n \ge m \]
+		\item La suite $(u_n)$ est dite \textbf{bornée} si elle est à la fois majorée et minorée. Cela équivaut à :
+		\[ \ext{A}[\ge 0]{R}, \quad \qcq{n}[\ge n_0]{N}, \quad |u_n| \le A \]
+	\end{itemize}
+	
+	\subsection{Monotonie d'une suite}
+	Une suite $(u_n)_{n \ge n_0}$ est dite :
+	\begin{itemize}
+		\item \textbf{Croissante} si : $\qcq{n}[\ge n_0]{N}, \quad u_{n+1} \ge u_n$
+		\item \textbf{Décroissante} si : $\qcq{n}[\ge n_0]{N}, \quad u_{n+1} \le u_n$
+		\item \textbf{Monotone} si elle est croissante ou décroissante.
+	\end{itemize}
+	
+	\section{Limites et convergence d'une suite}
+	
+	\subsection{Suite convergente}
+	Une suite $(u_n)_{n \ge n_0}$ converge vers un réel $l$ si tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang. Formellement :
+	\[ \lim_{n \to +\infty} u_n = l \iff \qcq{\varepsilon}[> 0]{R}, \ \ext{N}[\ge n_0]{N}, \ \qcq{n}[\ge N]{N}, \ |u_n - l| < \varepsilon \]
+	Une suite qui n'est pas convergente est dite \textbf{divergente} (elle tend vers $\pm \infty$ ou n'admet pas de limite).
+	
+	\subsection{Propriétés des limites}
+	\begin{itemize}
+		\item \textbf{Unicité de la limite} : Si une suite converge, sa limite est unique.
+		\item Toute suite convergente est bornée. (La réciproque est fausse, ex: $u_n = (-1)^n$).
+		\item Si $(u_n)$ et $(v_n)$ convergent vers $l$ et $l'$ respectivement, alors :
+		\begin{itemize}
+			\item $\lim (u_n + v_n) = l + l'$
+			\item $\lim (u_n \cdot v_n) = l \cdot l'$
+			\item Si $l' \ne 0$, $\lim \frac{u_n}{v_n} = \frac{l}{l'}$
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Théorèmes de convergence}
+	\begin{itemize}
+		\item \textbf{Théorème des limites monotones} :
+		\begin{itemize}
+			\item Toute suite croissante et majorée converge.
+			\item Toute suite décroissante et minorée converge.
+		\end{itemize}
+		\item \textbf{Théorème des gendarmes} :
+		Si $\qcq{n}[\ge n_0]{N}$, $v_n \le u_n \le w_n$ et $\lim v_n = \lim w_n = l$, alors la suite $(u_n)$ converge et $\lim u_n = l$.
+	\end{itemize}
+	
+	\section{Suites adjacentes}
+	Deux suites $(u_n)$ et $(v_n)$ sont dites \textbf{adjacentes} si :
+	\begin{enumerate}
+		\item L'une est croissante et l'autre est décroissante.
+		\item $\lim_{n \to +\infty} (v_n - u_n) = 0$.
+	\end{enumerate}
+	\textbf{Théorème} : Si deux suites $(u_n)$ et $(v_n)$ sont adjacentes (avec $(u_n)$ croissante et $(v_n)$ décroissante), alors elles convergent vers la même limite $l$, et on a :
+	\[ \qcq{n}{N}, \quad u_n \le l \le v_n \]
+	
+	\section{Suites récurrentes du type $u_{n+1} = f(u_n)$}
+	Soit $f$ une fonction numérique continue sur un intervalle $I$ de $\mathbb{R}$, et $(u_n)$ la suite définie par $u_0 \in I$ et :
+	\[ \qcq{n}{N}, \quad u_{n+1} = f(u_n) \]
+	\textbf{Théorème (du point fixe)} :
+	Si la suite $(u_n)$ vérifie les conditions suivantes :
+	\begin{enumerate}
+		\item $f(I) \subset I$ (l'intervalle $I$ est stable par $f$),
+		\item La fonction $f$ est continue sur $I$,
+		\item La suite $(u_n)$ converge vers une limite $l \in I$,
+	\end{enumerate}
+	alors $l$ est un point fixe de $f$, c'est-à-dire :
+	\[ f(l) = l \]
+	
+\end{document}

@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Forme algébrique et représentation géométrique}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Définition de $\mathbb {C}$}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Conjugué d'un nombre complexe}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Représentation géométrique}{2}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Formes trigonométrique et exponentielle}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Module d'un complexe}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Argument et forme trigonométrique}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Forme exponentielle, formules de Moivre et d'Euler}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Équations du second degré dans $\mathbb {C}$}{3}{section.3}%
+\contentsline {section}{\numberline {4}Applications géométriques et transformations}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Interprétation géométrique des angles et rapports}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Transformations complexes}{3}{subsection.4.2}%

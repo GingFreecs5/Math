@@ -1,0 +1,132 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Nombres Complexes}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Forme algébrique et représentation géométrique}
+	
+	\subsection{Définition de $\mathbb{C}$}
+	Il existe un ensemble contenant $\mathbb{R}$, noté $\mathbb{C}$, appelé l'ensemble des \textbf{nombres complexes}, tel que :
+	\begin{itemize}
+		\item Il contient un élément imaginaire $i$ tel que $i^2 = -1$.
+		\item Tout élément $z \in \mathbb{C}$ s'écrit de manière unique sous la forme :
+		\[ z = x + iy \quad (\text{où } x, y \in \mathbb{R}) \]
+		Cette écriture est appelée la \textbf{forme algébrique} de $z$.
+		\item $x = \text{Re}(z)$ est la partie réelle de $z$.
+		\item $y = \text{Im}(z)$ est la partie imaginaire de $z$.
+	\end{itemize}
+	
+	\subsection{Conjugué d'un nombre complexe}
+	Soit $z = x + iy$ un nombre complexe. Le \textbf{conjugué} de $z$, noté $\bar{z}$, est le complexe :
+	\[ \bar{z} = x - iy \]
+	Propriétés :
+	\begin{itemize}
+		\item $\overline{z + z'} = \bar{z} + \bar{z}'$ et $\overline{z \cdot z'} = \bar{z} \cdot \bar{z}'$
+		\item $z + \bar{z} = 2\text{Re}(z)$ et $z - \bar{z} = 2i\text{Im}(z)$
+		\item $z \in \mathbb{R} \iff z = \bar{z}$ et $z \in i\mathbb{R} \iff z = -\bar{z}$
+		\item $z \bar{z} = x^2 + y^2$
+	\end{itemize}
+	
+	\subsection{Représentation géométrique}
+	Le plan est muni d'un repère orthonormé direct $(O, \vec{u}, \vec{v})$.
+	À tout nombre complexe $z = x + iy$, on associe le point $M(x, y)$ appelé \textbf{image} de $z$. On dit que $z$ est \textbf{l'affixe} du point $M$, noté $M(z)$.
+	* L'affixe du vecteur $\vec{w}(x, y)$ est $z_{\vec{w}} = x + iy$.
+	* Pour deux points $A(z_A)$ et $B(z_B)$, l'affixe du vecteur $\overrightarrow{AB}$ est $z_B - z_A$.
+	
+	\section{Formes trigonométrique et exponentielle}
+	
+	\subsection{Module d'un complexe}
+	Le \textbf{module} d'un complexe $z = x + iy$, noté $|z|$, est le réel positif :
+	\[ |z| = \sqrt{z\bar{z}} = \sqrt{x^2 + y^2} \]
+	Géométriquement, si $M$ a pour affixe $z$, alors $|z| = OM$.
+	Propriétés :
+	\begin{itemize}
+		\item $|z \cdot z'| = |z| \cdot |z'|$ et $\left|\frac{z}{z'}\right| = \frac{|z|}{|z'|}$ (si $z' \ne 0$)
+		\item $|z^n| = |z|^n$
+		\item \textbf{Inégalité triangulaire} : $|z + z'| \le |z| + |z'|$
+	\end{itemize}
+	
+	\subsection{Argument et forme trigonométrique}
+	Soit $z$ un complexe non nul d'image $M$. Une mesure de l'angle orienté $(\vec{u}, \overrightarrow{OM})$ est appelée un \textbf{argument} de $z$, noté $\arg(z) \pmod{2\pi}$.
+	Tout complexe non nul $z$ s'écrit sous sa \textbf{forme trigonométrique} :
+	\[ z = r(\cos(\theta) + i\sin(\theta)) \quad \text{où } r = |z| \text{ et } \theta \equiv \arg(z) \pmod{2\pi} \]
+	On a : $x = r\cos(\theta)$ et $y = r\sin(\theta)$.
+	
+	\subsection{Forme exponentielle, formules de Moivre et d'Euler}
+	On pose pour tout réel $\theta$, $e^{i\theta} = \cos(\theta) + i\sin(\theta)$.
+	La \textbf{forme exponentielle} d'un complexe non nul $z$ est :
+	\[ z = r e^{i\theta} \]
+	Formules importantes :
+	\begin{itemize}
+		\item \textbf{Formule de Moivre} : $\qcq{n}{Z}, \quad (\cos(\theta) + i\sin(\theta))^n = \cos(n\theta) + i\sin(n\theta) \iff (e^{i\theta})^n = e^{in\theta}$
+		\item \textbf{Formules d'Euler} :
+		\[ \cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2} \quad \text{et} \quad \sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i} \]
+	\end{itemize}
+	
+	\section{Équations du second degré dans $\mathbb{C}$}
+	Soit l'équation $az^2 + bz + c = 0$ où $a, b, c \in \mathbb{R}$ et $a \ne 0$.
+	Soit $\Delta = b^2 - 4ac$ le discriminant.
+	\begin{itemize}
+		\item Si $\Delta > 0$, l'équation admet deux solutions réelles : $z_1 = \frac{-b-\sqrt{\Delta}}{2a}$ et $z_2 = \frac{-b+\sqrt{\Delta}}{2a}$.
+		\item Si $\Delta = 0$, l'équation admet une solution réelle double : $z_0 = -\frac{b}{2a}$.
+		\item Si $\Delta < 0$, l'équation admet deux solutions complexes conjuguées :
+		\[ z_1 = \frac{-b-i\sqrt{-\Delta}}{2a} \quad \text{et} \quad z_2 = \frac{-b+i\sqrt{-\Delta}}{2a} \]
+	\end{itemize}
+	
+	\section{Applications géométriques et transformations}
+	
+	\subsection{Interprétation géométrique des angles et rapports}
+	Soient $A(z_A)$, $B(z_B)$, $C(z_C)$ et $D(z_D)$ quatre points distincts.
+	\begin{itemize}
+		\item La distance $AB = |z_B - z_A|$.
+		\item Une mesure de l'angle $(\overrightarrow{AB}, \overrightarrow{CD})$ est $\arg\left(\frac{z_D - z_C}{z_B - z_A}\right) \pmod{2\pi}$.
+		\item Les points $A$, $B$ et $C$ sont alignés si et seulement si $\frac{z_C - z_A}{z_B - z_A} \in \mathbb{R}$.
+		\item Les droites $(AB)$ et $(CD)$ sont orthogonales si et seulement si $\frac{z_D - z_C}{z_B - z_A} \in i\mathbb{R}$.
+	\end{itemize}
+	
+	\subsection{Transformations complexes}
+	Soit $M(z)$ un point du plan et $M'(z')$ son image par une transformation.
+	\begin{itemize}
+		\item \textbf{Translation} de vecteur $\vec{u}$ d'affixe $b$ :
+		\[ z' = z + b \]
+		\item \textbf{Homothétie} de centre $\Omega(\omega)$ et de rapport $k \in \mathbb{R}^*$ :
+		\[ z' - \omega = k(z - \omega) \]
+		\item \textbf{Rotation} de centre $\Omega(\omega)$ et d'angle $\theta \in \mathbb{R}$ :
+		\[ z' - \omega = e^{i\theta}(z - \omega) \]
+	\end{itemize}
+	
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Structures Algébriques}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Loi de composition interne)}
+	On définit sur l'intervalle $G = ]-1, 1[$ la loi de composition $*$ par :
+	\[ \qcq{x}[, y]{G}, \quad x * y = \frac{x + y}{1 + xy} \]
+	\begin{enumerate}
+		\item Montrer que $*$ est une loi de composition interne sur $G$.
+		\item Montrer que la loi $*$ est commutative et associative.
+		\item Déterminer l'élément neutre pour la loi $*$.
+		\item Montrer que tout élément de $G$ admet un symétrique pour la loi $*$.
+		\item En déduire la nature de la structure de $(G, *)$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 2 (Groupes et sous-groupes)}
+	Soit $(G, *)$ un groupe. Pour tous éléments $a$ and $b$ de $G$, on définit le commutateur de $a$ et $b$ par $[a, b] = a * b * a' * b'$ (où $x'$ désigne le symétrique de $x$).
+	\begin{enumerate}
+		\item Montrer que $a * b = b * a \iff [a, b] = e$ (où $e$ est l'élément neutre de $G$).
+		\item Soit $H$ un sous-groupe de $G$. Montrer que si pour tous $a, b \in G$, $[a, b] \in H$, alors le groupe quotient (si défini) ou la relation de congruence associée possède des propriétés commutatives.
+	\end{enumerate}
+	
+	\subsection*{Exercice 3 (Espaces vectoriels)}
+	Soit $E = \mathbb{R}^3$. On considère l'ensemble $F$ défini par :
+	\[ F = \left\{ (x, y, z) \in \mathbb{R}^3 \ \middle| \ x + 2y - z = 0 \right\} \]
+	\begin{enumerate}
+		\item Montrer que $F$ est un sous-espace vectoriel de $\mathbb{R}^3$.
+		\item Déterminer deux vecteurs $\vec{u}$ et $\vec{v}$ de $F$ tels que tout vecteur de $F$ s'écrive comme combinaison linéaire de $\vec{u}$ et $\vec{v}$.
+	\end{enumerate}
+	
+\end{document}

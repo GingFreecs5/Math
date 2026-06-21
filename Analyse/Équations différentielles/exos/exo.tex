@@ -1,0 +1,65 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Équations Différentielles}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Équations du premier ordre)}
+	Résoudre les équations différentielles suivantes sur $\mathbb{R}$ :
+	\begin{enumerate}
+		\item $y' - 2y = 0$
+		\item $2y' + y = 3$
+		\item Déterminer la solution $f$ de l'équation $y' + 3y = 6$ telle que $f(0) = 4$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 2 (Équations du second ordre)}
+	Résoudre les équations différentielles suivantes sur $\mathbb{R}$ :
+	\begin{enumerate}
+		\item $y'' - 3y' + 2y = 0$
+		\item $y'' + 4y' + 4y = 0$
+		\item $y'' + 2y' + 5y = 0$
+		\item Déterminer la solution $g$ de l'équation $y'' + y = 0$ telle que $g(0) = 1$ et $g'(0) = 2$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 3 (Problème de synthèse)}
+	Soit l'équation différentielle :
+	\[ (E) : y'' - 2y' + y = 0 \]
+	\begin{enumerate}
+		\item Résoudre l'équation $(E)$ sur $\mathbb{R}$.
+		\item Déterminer la solution $f$ de $(E)$ vérifiant $f(0) = 1$ et $f'(0) = 0$.
+		\item Soit $g$ la fonction définie sur $\mathbb{R}$ par $g(x) = f(x) - x$.
+		Étudier les variations de $g$ et déterminer ses limites en $+\infty$ et $-\infty$.
+	\end{enumerate}
+	
+\end{document}

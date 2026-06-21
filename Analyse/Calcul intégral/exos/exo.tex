@@ -1,0 +1,71 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Calcul Intégral}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Calcul de primitives et intégrales simples)}
+	Calculez les intégrales suivantes :
+	\[ I_1 = \int_0^1 \frac{x}{x^2 + 1} \, dx \]
+	\[ I_2 = \int_0^{\pi/2} \sin(x)\cos^3(x) \, dx \]
+	\[ I_3 = \int_1^e \frac{\ln(x)}{x} \, dx \]
+	
+	\subsection*{Exercice 2 (Intégration par parties)}
+	Calculez les intégrales suivantes à l'aide d'une intégration par parties :
+	\[ J_1 = \int_1^e x \ln(x) \, dx \]
+	\[ J_2 = \int_0^\pi x \sin(x) \, dx \]
+	\[ J_3 = \int_0^1 \arctan(x) \, dx \]
+	
+	\subsection*{Exercice 3 (Sommes de Riemann)}
+	Soit la suite $(u_n)_{n \in \mathbb{N}^*}$ définie par :
+	\[ u_n = \sum_{k=1}^n \frac{n}{n^2 + k^2} \]
+	\begin{enumerate}
+		\item Montrer que pour tout $n \ge 1$ :
+		\[ u_n = \frac{1}{n} \sum_{k=1}^n \frac{1}{1 + \left(\frac{k}{n}\right)^2} \]
+		\item En utilisant le théorème des sommes de Riemann pour une fonction $f$ continue à déterminer sur $[0, 1]$, calculer la limite de la suite $(u_n)$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 4 (Étude d'une fonction définie par une intégrale)}
+	Soit $F$ la fonction définie sur $[0, +\infty[$ par :
+	\[ F(x) = \int_0^x e^{-t^2} \, dt \]
+	\begin{enumerate}
+		\item Montrer que $F$ est dérivable sur $[0, +\infty[$ et calculer sa dérivée $F'$.
+		\item Étudier le sens de variation de $F$.
+		\item Montrer que pour tout $t \ge 1$, $e^{-t^2} \le e^{-t}$.
+		\item En déduire que pour tout $x \ge 1$ :
+		\[ F(x) \le F(1) + e^{-1} - e^{-x} \]
+		\item En déduire que la fonction $F$ est majorée sur $[0, +\infty[$, et qu'elle admet une limite finie en $+\infty$.
+	\end{enumerate}
+	
+\end{document}

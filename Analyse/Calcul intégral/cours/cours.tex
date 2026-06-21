@@ -1,0 +1,94 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Calcul Intégral}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Intégrale d'une fonction continue}
+	
+	\subsection{Définition}
+	Soit $f$ une fonction continue sur un intervalle $I$ de $\mathbb{R}$, et soient $a$ et $b$ deux réels de $I$.
+	Soit $F$ une primitive de $f$ sur $I$. Le réel $F(b) - F(a)$ est indépendant du choix de la primitive $F$.
+	On l'appelle \textbf{l'intégrale de $f$ de $a$ à $b$} et on le note :
+	\[ \int_a^b f(x) \, dx = [F(x)]_a^b = F(b) - F(a) \]
+	
+	\subsection{Propriétés fondamentales}
+	Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$, et $a$, $b$, $c$ trois réels de $I$.
+	\begin{itemize}
+		\item \textbf{Relation de Chasles} :
+		\[ \int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx \]
+		\item \textbf{Linéarité} : Pour tous réels $\alpha$ et $\beta$,
+		\[ \int_a^b (\alpha f(x) + \beta g(x)) \, dx = \alpha \int_a^b f(x) \, dx + \beta \int_a^b g(x) \, dx \]
+		\item \textbf{Positivité} : Si $a \le b$ et $\qcq{x}{[a, b]}{R}, \ f(x) \ge 0$, alors :
+		\[ \int_a^b f(x) \, dx \ge 0 \]
+		\item \textbf{Conservation de l'ordre} : Si $a \le b$ et $\qcq{x}{[a, b]}{R}, \ f(x) \le g(x)$, alors :
+		\[ \int_a^b f(x) \, dx \le \int_a^b g(x) \, dx \]
+	\end{itemize}
+	
+	\section{Moyenne d'une fonction et inégalités}
+	
+	\subsection{Valeur moyenne}
+	Soit $f$ une fonction continue sur $[a, b]$ avec $a < b$.
+	La \textbf{valeur moyenne} de $f$ sur $[a, b]$ est le réel $\mu$ défini par :
+	\[ \mu = \frac{1}{b-a} \int_a^b f(x) \, dx \]
+	
+	\subsection{Inégalité de la moyenne}
+	Soit $f$ une fonction continue sur $[a, b]$ ($a < b$). S'il existe deux réels $m$ et $M$ tels que $\qcq{x}{[a, b]}{R}, \ m \le f(x) \le M$, alors :
+	\[ m(b-a) \le \int_a^b f(x) \, dx \le M(b-a) \]
+	De manière générale, si $f$ et $g$ sont continues sur $[a, b]$ ($a \le b$) et $|f(x)| \le g(x)$ sur $[a, b]$, alors :
+	\[ \left| \int_a^b f(x) \, dx \right| \le \int_a^b g(x) \, dx \]
+	
+	\section{Techniques de calcul d'intégrales}
+	
+	\subsection{Intégration par parties (IPP)}
+	Soient $u$ et $v$ deux fonctions dérivables sur un intervalle $I$ telles que leurs dérivées $u'$ et $v'$ soient continues sur $I$. Pour tous $a$ and $b$ dans $I$ :
+	\[ \int_a^b u(x) v'(x) \, dx = [u(x)v(x)]_a^b - \int_a^b u'(x) v(x) \, dx \]
+	
+	\subsection{Changement de variable (cas simple)}
+	Soit $\varphi$ une fonction de classe $\mathcal{C}^1$ sur $[\alpha, \beta]$ à valeurs dans un intervalle $I$, et $f$ une fonction continue sur $I$. Alors :
+	\[ \int_{\alpha}^{\beta} f(\varphi(t)) \varphi'(t) \, dt = \int_{\varphi(\alpha)}^{\varphi(\beta)} f(x) \, dx \]
+	
+	\section{Sommes de Riemann}
+	Soit $f$ une fonction continue sur $[a, b]$. On divise l'intervalle $[a, b]$ en $n$ sous-intervalles de même amplitude $h = \frac{b-a}{n}$.
+	Les points de la subdivision sont $x_k = a + k\frac{b-a}{n}$ pour $k \in \{0, \dots, n\}$.
+	Les \textbf{sommes de Riemann} associées à $f$ sont définies par :
+	\[ S_n = \frac{b-a}{n} \sum_{k=0}^{n-1} f\left(a + k\frac{b-a}{n}\right) \quad \text{ou} \quad T_n = \frac{b-a}{n} \sum_{k=1}^{n} f\left(a + k\frac{b-a}{n}\right) \]
+	\textbf{Théorème} : Si $f$ est continue sur $[a, b]$, alors les suites $(S_n)$ et $(T_n)$ convergent et :
+	\[ \lim_{n \to +\infty} S_n = \lim_{n \to +\infty} T_n = \int_a^b f(x) \, dx \]
+	En particulier, pour $a=0$ et $b=1$ :
+	\[ \lim_{n \to +\infty} \frac{1}{n} \sum_{k=1}^{n} f\left(\frac{k}{n}\right) = \int_0^1 f(x) \, dx \]
+	
+\end{document}

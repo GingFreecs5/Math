@@ -1,0 +1,72 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Suites Numériques}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Convergence et encadrement)}
+	Soit la suite $(u_n)_{n \in \mathbb{N}^*}$ définie par :
+	\[ u_n = \sum_{k=1}^n \frac{1}{\sqrt{n^2 + k}} \]
+	\begin{enumerate}
+		\item Montrer que pour tout $n \in \mathbb{N}^*$ et tout $k \in \{1, \dots, n\}$ :
+		\[ \frac{1}{\sqrt{n^2 + n}} \le \frac{1}{\sqrt{n^2 + k}} \le \frac{1}{\sqrt{n^2 + 1}} \]
+		\item En déduire un encadrement de $u_n$.
+		\item Montrer que la suite $(u_n)$ converge et déterminer sa limite.
+	\end{enumerate}
+	
+	\subsection*{Exercice 2 (Suites adjacentes)}
+	Soient $(u_n)_{n \in \mathbb{N}^*}$ et $(v_n)_{n \in \mathbb{N}^*}$ les suites définies par :
+	\[ u_n = \sum_{k=1}^n \frac{1}{k^2} \quad \text{et} \quad v_n = u_n + \frac{1}{n} \]
+	\begin{enumerate}
+		\item Montrer que la suite $(u_n)$ est strictement croissante.
+		\item Montrer que la suite $(v_n)$ est strictement décroissante.
+		\item Montrer que les suites $(u_n)$ et $(v_n)$ sont adjacentes.
+		\item Que peut-on en déduire ?
+	\end{enumerate}
+	
+	\subsection*{Exercice 3 (Suite récurrente $u_{n+1} = f(u_n)$)}
+	Soit la suite $(u_n)_{n \in \mathbb{N}}$ définie par $u_0 = \frac{1}{2}$ et :
+	\[ \qcq{n}{N}, \quad u_{n+1} = u_n (2 - u_n) \]
+	\begin{enumerate}
+		\item Soit $f$ la fonction définie sur $[0, 1]$ par $f(x) = x(2-x)$. 
+		\begin{enumerate}
+			\item Étudier les variations de $f$ sur $[0, 1]$.
+			\item Montrer que l'intervalle $[0, 1]$ est stable par $f$.
+		\end{enumerate}
+		\item Montrer par récurrence que pour tout $n \in \mathbb{N}$ : $0 < u_n < 1$.
+		\item Étudier la monotonie de la suite $(u_n)$.
+		\item En déduire que la suite $(u_n)$ est convergente et déterminer sa limite.
+	\end{enumerate}
+	
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{xparse}
+
+\NewDocumentCommand{\qcq}{m o o m}{%
+	\ensuremath{\forall #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+\NewDocumentCommand{\ext}{m o o m}{%
+	\ensuremath{\exists #1 \IfValueT{#2}{, #2} \IfValueT{#3}{, #3}  \in  \mathbb{#4}}%
+}
+
+\title{\textbf{Exercices : Nombres Complexes}}
+\author{\textbf{Yassin Akkab}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1 (Calculs algébriques et trigonométriques)}
+	\begin{enumerate}
+		\item Écrire sous forme algébrique le nombre complexe :
+		\[ z_1 = \frac{3 - i}{1 + 2i} \]
+		\item Déterminer le module et un argument des nombres complexes suivants, puis les écrire sous forme exponentielle :
+		\[ z_2 = 1 + i\sqrt{3} \quad \text{et} \quad z_3 = \sqrt{2} - i\sqrt{2} \]
+		\item En déduire la forme exponentielle de :
+		\[ Z = \frac{z_2}{z_3} \]
+	\end{enumerate}
+	
+	\subsection*{Exercice 2 (Résolution d'équations)}
+	\begin{enumerate}
+		\item Résoudre dans $\mathbb{C}$ l'équation :
+		\[ z^2 - 4z + 8 = 0 \]
+		\item Résoudre dans $\mathbb{C}$ l'équation :
+		\[ z^2 - 2\cos(\theta)z + 1 = 0 \quad (\text{où } \theta \in \mathbb{R}) \]
+		Exprimer les solutions sous forme exponentielle.
+	\end{enumerate}
+	
+	\subsection*{Exercice 3 (Géométrie complexes et configurations)}
+	Dans le plan complexe muni d'un repère orthonormé direct $(O, \vec{u}, \vec{v})$, on considère les points $A, B$ et $C$ d'affixes respectives :
+	\[ a = 2 + i, \quad b = 1 - 2i, \quad c = -2 - i \]
+	\begin{enumerate}
+		\item Placer les points $A, B$ et $C$ dans le repère.
+		\item Calculer le rapport $\frac{c - b}{a - b}$.
+		\item En déduire la nature du triangle $ABC$.
+	\end{enumerate}
+	
+	\subsection*{Exercice 4 (Transformations géométriques)}
+	Soit $R$ la rotation de centre $\Omega$ d'affixe $\omega = 1 + i$ et d'angle $\frac{\pi}{3}$.
+	\begin{enumerate}
+		\item Donner l'expression complexe de la rotation $R$.
+		\item Déterminer l'affixe du point $A'$ image du point $A$ d'affixe $a = 2$ par la rotation $R$.
+		\item Soit $B$ le point d'affixe $b = i$. Déterminer l'affixe du point $B'$ dont l'image par $R$ est $B$.
+	\end{enumerate}
+	
+\end{document}
